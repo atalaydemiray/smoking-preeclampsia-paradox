@@ -1,0 +1,45 @@
+name: R code
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  reproduce:
+    name: Rebuild every table and figure, and check them against the published versions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.6.0'
+
+      # Everything run_all.R needs ships with R, so there is nothing to install.
+      - name: Parse every R file
+        run: |
+          Rscript -e 'fs <- list.files(".", "[.]R$", recursive = TRUE, full.names = TRUE);
+            for (f in fs) tryCatch(parse(f), error = function(e) stop(f, ": ", conditionMessage(e)));
+            cat(length(fs), "R files parsed\n")'
+
+      # run_all.R stops on its own if a table no longer matches results/exhibit_checksums.csv,
+      # so a change that moved a number fails here rather than passing quietly.
+      - name: Reproduce the tables and figures
+        run: Rscript run_all.R
+
+      - name: Keep the rebuilt output from this run
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tables-and-figures
+          path: output/
+          retention-days: 14

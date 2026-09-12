@@ -1,0 +1,22 @@
+model_id,display_label
+primary_main,Within smokers: full adjustment
+broad_main,Both early windows vs neither
+prepregnancy_main,Prepregnancy-only
+primary_core_same_cc,"Within smokers: core, same records"
+primary_augmented_same_cc,"Within smokers: BMI/education, same records"
+primary_core_available,Within smokers: core-available records
+primary_recent,Within smokers: 2018-2024
+primary_historical,Within smokers: 2014-2015
+primary_oe28,Within smokers: gestation >=28 weeks
+all_years_shared_core_live,All years core: live only
+all_years_shared_core_inclusive,All years core: fetal inclusive
+all_years_shared_augmented_live,All years augmented: live only
+all_years_shared_augmented_inclusive,All years augmented: fetal inclusive
+reporting_years_shared_core_live,Reporting years core: live only
+reporting_years_shared_core_inclusive,Reporting years core: fetal inclusive
+reporting_years_shared_augmented_live,Reporting years augmented: live only
+reporting_years_shared_augmented_inclusive,Reporting years augmented: fetal inclusive
+age_spec_fewer_age_knots,Within smokers: two age knots
+age_spec_shifted_age_knots,Within smokers: shifted age knots
+age_spec_more_age_knots,Within smokers: four age knots
+age_spec_age_by_bmi_nuisance,Within smokers: age by BMI nuisance

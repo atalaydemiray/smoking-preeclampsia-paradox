@@ -1,0 +1,84 @@
+{
+  "schema_version": "2026-09-06.1",
+  "scope": "Structural/linkage fields only; not a clinical analysis adapter.",
+  "field_positions_one_based_inclusive": {
+    "DOB_YY": [9, 12], "RESTATUS": [104, 104],
+    "CO_SEQNUM": [365, 371], "CO_YOD": [372, 375]
+  },
+  "payload_widths": {"denominator": 1346, "numerator": 1743},
+  "line_ending": "CRLF",
+  "cohorts": [
+    {
+      "birth_year": 2018, "release_year": 2019,
+      "archive": "2019PE2018CO.zip", "guide": "19PE18CO_linkedUG.pdf",
+      "guide_year_of_death_field": "CO_DODYY",
+      "denominator": "VS18LINK.Public.USDENPUB_add_Seq_for2018Cohort_r2021_08_25",
+      "numerators": {"2018": "VS18LINK.Public.USNUMPUB_R2020_04_03", "2019": "VS19LINK.Public.USNUMPUB_R2021_08_30"},
+      "guide_count_summary_pdf_page": 21, "guide_cohort_table_pdf_page": 85,
+      "guide_summary_occurrence_births": 3801534, "guide_summary_occurrence_linked_deaths": 21379,
+      "guide_table_occurrence_births": 3801534, "guide_table_resident_births": 3791712,
+      "guide_table_occurrence_linked_deaths": 21379, "guide_table_resident_linked_deaths": 21346,
+      "documentation_caveat": "Percent-linked paragraph uses 21,346 (resident table count) without clearly distinguishing it from occurrence; do not infer unlinked-death residency from this paragraph."
+    },
+    {
+      "birth_year": 2019, "release_year": 2020,
+      "archive": "2020PE2019CO.zip", "guide": "20PE19CO_linkedUG.pdf",
+      "guide_year_of_death_field": "CO_YOD",
+      "denominator": "VS19LINK.Public.USDENPUB_add_Seq_for2019Cohort_r2022_05_04_V1",
+      "numerators": {"2019": "VS19LINK.Public.USNUMPUB_R2021_08_30", "2020": "VS20LINK.Public.USNUMPUB_R2022_05_03"},
+      "guide_count_summary_pdf_page": 21, "guide_cohort_table_pdf_page": 85,
+      "guide_summary_occurrence_births": 3757582, "guide_summary_occurrence_linked_deaths": 20681,
+      "guide_table_occurrence_births": 3757582, "guide_table_resident_births": 3747540,
+      "guide_table_occurrence_linked_deaths": 20681, "guide_table_resident_linked_deaths": 20639,
+      "documentation_caveat": null
+    },
+    {
+      "birth_year": 2020, "release_year": 2021,
+      "archive": "2021PE2020CO.zip", "guide": "21PE20CO_linkedUG.pdf",
+      "guide_year_of_death_field": "CO_YOD",
+      "denominator": "VS2020LINK.Public.USDENPUB_add_Seq_for2020Cohort_r2023_06_05",
+      "numerators": {"2020": "VS20LINK.Public.USNUMPUB_R2022_05_03", "2021": "VS2021LINK.Public.USNUMPUB_R2023_05_31"},
+      "guide_count_summary_pdf_page": 21, "guide_cohort_table_pdf_page": 80,
+      "guide_summary_occurrence_births": 3549826, "guide_summary_occurrence_linked_deaths": 19376,
+      "guide_table_occurrence_births": 3549826, "guide_table_resident_births": 3613647,
+      "guide_table_occurrence_linked_deaths": 19376, "guide_table_resident_linked_deaths": 19346,
+      "documentation_caveat": "Printed occurrence births are smaller than resident births. Preserve this discrepancy. The prior 2020 period guide reports 3,619,826 occurrence births, corroborating a different count; no publisher correction is claimed."
+    },
+    {
+      "birth_year": 2021, "release_year": 2022,
+      "archive": "2022PE2021CO.zip", "guide": "22PE21CO_linkedUG.pdf",
+      "guide_year_of_death_field": "CO_YOD",
+      "denominator": "VS2021LINK.Public.USDENPUB_add_Seq_for2021Cohort_r2024_04_15",
+      "numerators": {"2021": "VS2021LINK.Public.USNUMPUB_R2023_05_31", "2022": "VS2022LINK.Public.USNUMPUB_R2024_08_07"},
+      "guide_count_summary_pdf_page": 21, "guide_cohort_table_pdf_page": 80,
+      "guide_summary_occurrence_births": 3669928, "guide_summary_occurrence_linked_deaths": 19965,
+      "guide_table_occurrence_births": 3669928, "guide_table_resident_births": 3664292,
+      "guide_table_occurrence_linked_deaths": 19982, "guide_table_resident_linked_deaths": 19965,
+      "documentation_caveat": "Count summary and percent-linked paragraph label 19,965 as occurrence, but cohort Table1 gives 19,982 occurrence and 19,965 residents. Preserve both targets; resolve against raw records without silently changing either."
+    },
+    {
+      "birth_year": 2022, "release_year": 2023,
+      "archive": "2023PE2022CO.zip", "guide": "23PE22CO_linkedUG.pdf",
+      "guide_year_of_death_field": "CO_YOD",
+      "denominator": "VS2022LINK.Public.USDENPUB_add_Seq_for2022Cohort_r2024_11_20",
+      "numerators": {"2022": "VS2022LINK.Public.USNUMPUB_R2024_08_07", "2023": "VS2023LINK.Public.USNUMPUB_R2024_11_27"},
+      "guide_count_summary_pdf_page": 21, "guide_cohort_table_pdf_page": 80,
+      "guide_summary_occurrence_births": 3676029, "guide_summary_occurrence_linked_deaths": 20299,
+      "guide_table_occurrence_births": 3676029, "guide_table_resident_births": 3667758,
+      "guide_table_occurrence_linked_deaths": 20299, "guide_table_resident_linked_deaths": 20268,
+      "documentation_caveat": null
+    },
+    {
+      "birth_year": 2023, "release_year": 2024,
+      "archive": "2024PE2023CO.zip", "guide": "24PE23CO_linkedUG.pdf",
+      "guide_year_of_death_field": "CO_YOD",
+      "denominator": "VS2023LINK.Public.USDENPUB_add_Seq_for2023Cohort_r2026_01_14",
+      "numerators": {"2023": "VS2023LINK.Public.USNUMPUB_R2024_11_27", "2024": "VS2024LINK.Public.USNUMPUB_R2026_01_14"},
+      "guide_count_summary_pdf_page": 19, "guide_cohort_table_pdf_page": 80,
+      "guide_summary_occurrence_births": 3605081, "guide_summary_occurrence_linked_deaths": 19772,
+      "guide_table_occurrence_births": 3605081, "guide_table_resident_births": 3596017,
+      "guide_table_occurrence_linked_deaths": 19772, "guide_table_resident_linked_deaths": 19743,
+      "documentation_caveat": null
+    }
+  ]
+}

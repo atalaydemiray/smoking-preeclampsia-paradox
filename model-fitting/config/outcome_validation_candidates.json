@@ -1,0 +1,53 @@
+{
+  "status": "candidate_external_evidence_not_locked_bias_parameters",
+  "review_date": "2026-09-06",
+  "endpoint": "Birth-certificate gestational hypertension versus medical-record abstraction",
+  "definitions": {"TP": "certificate yes and medical record yes", "FN": "certificate no and medical record yes", "FP": "certificate yes and medical record no", "TN": "certificate no and medical record no"},
+  "samples": [
+    {
+      "id": "nchs_2013_state_a",
+      "publication_year": 2013, "birth_period": "2010-10 to 2011-03",
+      "source_pdf": "literature/primary/nchs_validation_two_states_2013.pdf",
+      "source_url": "https://www.cdc.gov/nchs/data/nvsr/nvsr62/nvsr62_02.pdf",
+      "table": "Table 4, pp.15-16; Table2 missingness",
+      "sample_n": 600, "valid_n": 600, "TP": 32, "FN": 32, "FP": 20, "TN": 516,
+      "reported_agreement_n": 548, "reported_sensitivity_denominator": 64,
+      "reported_fdr_numerator": 20, "reported_fdr_denominator": 52,
+      "sampling": "150 births at each of four selected hospitals; PRAMS-based frame with low-birthweight oversampling",
+      "precision_note": "Raw validation counts are not a nationally representative simple random sample."
+    },
+    {
+      "id": "nchs_2013_state_b",
+      "publication_year": 2013, "birth_period": "2009-09 to 2009-11",
+      "source_pdf": "literature/primary/nchs_validation_two_states_2013.pdf",
+      "source_url": "https://www.cdc.gov/nchs/data/nvsr/nvsr62/nvsr62_02.pdf",
+      "table": "Table 4, pp.15-16; Table2 missingness",
+      "sample_n": 495, "valid_n": 495, "TP": 5, "FN": 20, "FP": 7, "TN": 463,
+      "reported_agreement_n": 468, "reported_sensitivity_denominator": 25,
+      "reported_fdr_numerator": null, "reported_fdr_denominator": null,
+      "sampling": "First 125 births per hospital, four selected hospitals; five frame errors excluded",
+      "precision_note": "Sensitivity has only five true positives. FDR is suppressed in the original because certificate-positive denominator is less than20; derived FDR must not be presented as an officially reported estimate."
+    },
+    {
+      "id": "nchs_2019_nyc",
+      "publication_year": 2019, "birth_period": "2013-01 to 2013-12",
+      "source_pdf": "literature/primary/nchs_validation_nyc_2019.pdf",
+      "source_url": "https://www.cdc.gov/nchs/data/nvsr/nvsr68/nvsr68_08-508.pdf",
+      "table": "Table4 p.16; Table2 p.14",
+      "sample_n": 900, "valid_n": 892, "TP": 14, "FN": 48, "FP": 6, "TN": 824,
+      "reported_agreement_n": 838, "reported_sensitivity_denominator": 62,
+      "reported_fdr_numerator": 6, "reported_fdr_denominator": 20,
+      "missing_medical_record": 5, "missing_certificate": 3, "missing_both": 0,
+      "sampling": "15 random births per hospital-month across five purposively selected hospitals",
+      "precision_note": "Publication2019 describes births2013. Item-specific complete-case denominator is892, not900."
+    }
+  ],
+  "transportability_limits": [
+    "No age-by-smoking-specific outcome error matrices are supplied.",
+    "Do not pool these raw counts as one precise national prior; hospital sampling and eras differ.",
+    "Medical-record abstraction is an imperfect reference, not verified biological truth.",
+    "No direct transport to fetal-death certificates or to2016-2024 without explicit uncertainty/scenarios.",
+    "No prior distributions, age/source effects or dependence parameters are locked by this file.",
+    "FDR is1-PPV, not1-specificity. Specificity requires the reference-negative denominator."
+  ]
+}

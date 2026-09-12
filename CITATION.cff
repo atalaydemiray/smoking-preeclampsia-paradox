@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this code, cite the manuscript below."
+title: "smoking-preeclampsia-paradox: analysis code and aggregate results for 'Reframing the smoking-preeclampsia paradox: an age-related reversal in 30.1 million United States birth records'"
+type: software
+license: MIT
+repository-code: "https://github.com/atalaydemiray/smoking-preeclampsia-paradox"
+version: "1.0.0"
+date-released: "2026-09-12"
+authors:
+  - family-names: Demiray
+    given-names: Atalay
+    affiliation: "Department of Health Policy and Management, Yale School of Public Health"
+  - family-names: Erden
+    given-names: Murat
+  - family-names: Skolnick
+    given-names: Sarah
+  - family-names: Tam
+    given-names: Jamie
+    affiliation: "Rutgers School of Public Health and Rutgers Institute for Nicotine and Tobacco Studies"
+preferred-citation:
+  type: article
+  title: "Reframing the smoking-preeclampsia paradox: an age-related reversal in 30.1 million United States birth records"
+  authors:
+    - family-names: Demiray
+      given-names: Atalay
+    - family-names: Erden
+      given-names: Murat
+    - family-names: Skolnick
+      given-names: Sarah
+    - family-names: Tam
+      given-names: Jamie
+  year: 2026
+  journal: "Submitted"

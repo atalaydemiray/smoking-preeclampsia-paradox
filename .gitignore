@@ -1,0 +1,22 @@
+# The downloaded source files go in data/. Nothing in it is ever committed.
+data/
+
+# Live-run output, before any disclosure review
+outputs/
+work/
+cache/
+*.log
+
+# R and editor junk
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+Thumbs.db
+~$*
+.ipynb_checkpoints/
+
+# What run_all.R writes. Generated in about a minute, so it is not committed; the reference is
+# results/exhibit_checksums.csv, which scripts/check_outputs_match.R verifies the rebuild against.
+output/

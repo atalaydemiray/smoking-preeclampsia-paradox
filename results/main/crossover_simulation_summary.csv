@@ -1,0 +1,57 @@
+scenario,metric,attempts,applicable_n,success,rate,wilson_lower,wilson_upper,mcse,conditioning
+global_null,pointwise_fixed_root_covered,1000,1000,938,0.938,0.921311939686634,0.951335819880019,0.00762600813007697,All applicable attempted replications; no fit failures
+global_null,simultaneous_fixed_root_covered,1000,1000,1000,1,0.996173241514445,1,0,All applicable attempted replications; no fit failures
+global_null,global_null_whole_domain_covered,1000,1000,988,0.988,0.979142731524502,0.993122352193596,0.00344325427466518,All applicable attempted replications; no fit failures
+global_null,simultaneous_reversal_detected,1000,1000,0,0,0,0.00382675848555512,0,All applicable attempted replications; no fit failures
+global_null,omnibus_rejected,1000,1000,59,0.059,0.0460142982128005,0.0753609027714591,0.00745110730026081,All applicable attempted replications; no fit failures
+global_null,local_delta_available,1000,1000,0,0,0,0.00382675848555512,0,All applicable attempted replications; no fit failures
+global_null,local_delta_covered_when_available,1000,0,0,,,,,Conditional on true unique regular root and exactly one regular fitted root; NOT unconditional coverage
+constant_positive,pointwise_fixed_root_covered,1000,0,0,,,,,Not defined for this DGP
+constant_positive,simultaneous_fixed_root_covered,1000,0,0,,,,,Not defined for this DGP
+constant_positive,global_null_whole_domain_covered,1000,0,0,,,,,Not defined for this DGP
+constant_positive,simultaneous_reversal_detected,1000,1000,0,0,0,0.00382675848555512,0,All applicable attempted replications; no fit failures
+constant_positive,omnibus_rejected,1000,1000,56,0.056,0.043374813385442,0.072023348149731,0.00727076337120113,All applicable attempted replications; no fit failures
+constant_positive,local_delta_available,1000,1000,0,0,0,0.00382675848555512,0,All applicable attempted replications; no fit failures
+constant_positive,local_delta_covered_when_available,1000,0,0,,,,,Conditional on true unique regular root and exactly one regular fitted root; NOT unconditional coverage
+constant_negative,pointwise_fixed_root_covered,1000,0,0,,,,,Not defined for this DGP
+constant_negative,simultaneous_fixed_root_covered,1000,0,0,,,,,Not defined for this DGP
+constant_negative,global_null_whole_domain_covered,1000,0,0,,,,,Not defined for this DGP
+constant_negative,simultaneous_reversal_detected,1000,1000,0,0,0,0.00382675848555512,0,All applicable attempted replications; no fit failures
+constant_negative,omnibus_rejected,1000,1000,49,0.049,0.0372610346473606,0.0641907015066101,0.00682634602111554,All applicable attempted replications; no fit failures
+constant_negative,local_delta_available,1000,1000,0,0,0,0.00382675848555512,0,All applicable attempted replications; no fit failures
+constant_negative,local_delta_covered_when_available,1000,0,0,,,,,Conditional on true unique regular root and exactly one regular fitted root; NOT unconditional coverage
+varying_positive,pointwise_fixed_root_covered,1000,0,0,,,,,Not defined for this DGP
+varying_positive,simultaneous_fixed_root_covered,1000,0,0,,,,,Not defined for this DGP
+varying_positive,global_null_whole_domain_covered,1000,0,0,,,,,Not defined for this DGP
+varying_positive,simultaneous_reversal_detected,1000,1000,0,0,0,0.00382675848555512,0,All applicable attempted replications; no fit failures
+varying_positive,omnibus_rejected,1000,1000,88,0.088,0.0719809979423209,0.107172251049777,0.00895857131466843,All applicable attempted replications; no fit failures
+varying_positive,local_delta_available,1000,1000,0,0,0,0.00382675848555512,0,All applicable attempted replications; no fit failures
+varying_positive,local_delta_covered_when_available,1000,0,0,,,,,Conditional on true unique regular root and exactly one regular fitted root; NOT unconditional coverage
+strong_reversal,pointwise_fixed_root_covered,1000,1000,965,0.965,0.951713377625547,0.974727736982887,0.00581162627841812,All applicable attempted replications; no fit failures
+strong_reversal,simultaneous_fixed_root_covered,1000,1000,1000,1,0.996173241514445,1,0,All applicable attempted replications; no fit failures
+strong_reversal,global_null_whole_domain_covered,1000,0,0,,,,,Not defined for this DGP
+strong_reversal,simultaneous_reversal_detected,1000,1000,275,0.275,0.248225874022526,0.303496167295973,0.0141200212464429,All applicable attempted replications; no fit failures
+strong_reversal,omnibus_rejected,1000,1000,999,0.999,0.994357441402042,0.999823453629374,0.000999499874937461,All applicable attempted replications; no fit failures
+strong_reversal,local_delta_available,1000,1000,938,0.938,0.921311939686634,0.951335819880019,0.00762600813007697,All applicable attempted replications; no fit failures
+strong_reversal,local_delta_covered_when_available,1000,938,751,0.800639658848614,0.773868910653584,0.824957988202833,0.0130447726432001,Conditional on true unique regular root and exactly one regular fitted root; NOT unconditional coverage
+moderate_reversal,pointwise_fixed_root_covered,1000,1000,944,0.944,0.927976651850269,0.956625186614558,0.00727076337120113,All applicable attempted replications; no fit failures
+moderate_reversal,simultaneous_fixed_root_covered,1000,1000,999,0.999,0.994357441402042,0.999823453629374,0.000999499874937461,All applicable attempted replications; no fit failures
+moderate_reversal,global_null_whole_domain_covered,1000,0,0,,,,,Not defined for this DGP
+moderate_reversal,simultaneous_reversal_detected,1000,1000,7,0.007,0.00339486840099076,0.0143783154657666,0.00263647491928143,All applicable attempted replications; no fit failures
+moderate_reversal,omnibus_rejected,1000,1000,561,0.561,0.530066327608115,0.591466807856647,0.0156932788161047,All applicable attempted replications; no fit failures
+moderate_reversal,local_delta_available,1000,1000,624,0.624,0.593557589958251,0.653493373937331,0.015317441039547,All applicable attempted replications; no fit failures
+moderate_reversal,local_delta_covered_when_available,1000,624,444,0.711538461538462,0.674782773175132,0.745705546433268,0.0181363902888154,Conditional on true unique regular root and exactly one regular fitted root; NOT unconditional coverage
+weak_reversal,pointwise_fixed_root_covered,1000,1000,948,0.948,0.93244426068072,0.960126963716223,0.00702111102319284,All applicable attempted replications; no fit failures
+weak_reversal,simultaneous_fixed_root_covered,1000,1000,996,0.996,0.989760443722738,0.998443411859592,0.00199599599197994,All applicable attempted replications; no fit failures
+weak_reversal,global_null_whole_domain_covered,1000,0,0,,,,,Not defined for this DGP
+weak_reversal,simultaneous_reversal_detected,1000,1000,0,0,0,0.00382675848555512,0,All applicable attempted replications; no fit failures
+weak_reversal,omnibus_rejected,1000,1000,53,0.053,0.0407465052485945,0.0686746168374918,0.00708456067798138,All applicable attempted replications; no fit failures
+weak_reversal,local_delta_available,1000,1000,185,0.185,0.16215480378455,0.21025605406135,0.0122790471943062,All applicable attempted replications; no fit failures
+weak_reversal,local_delta_covered_when_available,1000,185,94,0.508108108108108,0.436639239865369,0.579247102142021,0.0367558973817813,Conditional on true unique regular root and exactly one regular fitted root; NOT unconditional coverage
+near_boundary_reversal,pointwise_fixed_root_covered,1000,1000,962,0.962,0.94827307966865,0.972190995490697,0.00604615580348373,All applicable attempted replications; no fit failures
+near_boundary_reversal,simultaneous_fixed_root_covered,1000,1000,1000,1,0.996173241514445,1,0,All applicable attempted replications; no fit failures
+near_boundary_reversal,global_null_whole_domain_covered,1000,0,0,,,,,Not defined for this DGP
+near_boundary_reversal,simultaneous_reversal_detected,1000,1000,0,0,0,0.00382675848555512,0,All applicable attempted replications; no fit failures
+near_boundary_reversal,omnibus_rejected,1000,1000,930,0.93,0.912485351848717,0.944223635853706,0.00806845710157772,All applicable attempted replications; no fit failures
+near_boundary_reversal,local_delta_available,1000,1000,495,0.495,0.464090274800725,0.525947992784131,0.0158105977116616,All applicable attempted replications; no fit failures
+near_boundary_reversal,local_delta_covered_when_available,1000,495,341,0.688888888888889,0.646782726119206,0.728085875303949,0.0208079718432852,Conditional on true unique regular root and exactly one regular fitted root; NOT unconditional coverage
