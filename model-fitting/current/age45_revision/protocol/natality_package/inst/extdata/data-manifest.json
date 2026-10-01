@@ -1,0 +1,332 @@
+{
+  "schema_version": 1,
+  "package_version": "0.4.0.9002",
+  "status": "Published source-access alpha; independent scientific review pending",
+  "years": [
+    {
+      "year": 2024,
+      "metadata_status": "available",
+      "data_status": "published",
+      "guide_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2024.pdf",
+      "source_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2024us.zip",
+      "published": true,
+      "artifact": "natality_2024_source_v1.parquet",
+      "artifact_bytes": 115522627,
+      "artifact_sha256": "f48df9c05e66ac9e7e23e3467c625d0298338b38cff5bfbb13f75cd144860f6b",
+      "format": "parquet",
+      "records": 3638436,
+      "columns": 237,
+      "source_archive_sha256": "8ce1c61bc055b3327311985f918db5387ea6a1ed7d34b367afe30f468b92225a",
+      "guide_sha256": "7fb7ad1831c5021fc0b87b86d3713a00f733cc9d6ce183a597c9a63536d2fd88",
+      "validation_status": "passed",
+      "download_url": "https://github.com/atalaydemiray/natality-data/releases/download/source-v1-alpha/natality_2024_source_v1.parquet",
+      "validation_scope": "source-preserving conversion and numerical consistency",
+      "scientific_review": "pending",
+      "release_tag": "source-v1-alpha",
+      "release_stage": "alpha",
+      "mirror_urls": []
+    },
+    {
+      "year": 2023,
+      "metadata_status": "available",
+      "data_status": "published",
+      "guide_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2023.pdf",
+      "source_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2023us.zip",
+      "published": true,
+      "artifact": "natality_2023_source_v1.parquet",
+      "artifact_bytes": 114496948,
+      "artifact_sha256": "0bb49efaa80d3803827e66dc2df33a57498576d73998056693641eebcc273c4c",
+      "format": "parquet",
+      "records": 3605081,
+      "columns": 237,
+      "source_archive_sha256": "4474daab3475af096397e26ed5fdb541b1df59ee9b555fc0b31db84c44d83663",
+      "guide_sha256": "1b6bde59483c1fc0c34391c1a4e28ad6b48e182663b06854d06319fbd55efa76",
+      "download_url": "https://github.com/atalaydemiray/natality-data/releases/download/source-v1-alpha/natality_2023_source_v1.parquet",
+      "validation_status": "passed",
+      "validation_scope": "source-preserving conversion and numerical consistency",
+      "scientific_review": "pending",
+      "release_tag": "source-v1-alpha",
+      "release_stage": "alpha",
+      "mirror_urls": []
+    },
+    {
+      "year": 2022,
+      "metadata_status": "available",
+      "data_status": "published",
+      "guide_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2022.pdf",
+      "source_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/nat2022us.zip",
+      "published": true,
+      "artifact": "natality_2022_source_v1.parquet",
+      "artifact_bytes": 116664569,
+      "artifact_sha256": "d0fc2796fd21a0c2b7469063dd9d1c33ddf278c7a1b153eb474ec43443c2468a",
+      "format": "parquet",
+      "records": 3676029,
+      "columns": 237,
+      "source_archive_sha256": "d0b5c283e695e928c51f94aa55b02ed70c6a319bfb09eb95a994728d48416adc",
+      "guide_sha256": "fa92a64befb4fa404e24b8c56548a0687b0b65a64cb4812073408d43afa8dec6",
+      "download_url": "https://github.com/atalaydemiray/natality-data/releases/download/source-v1-alpha/natality_2022_source_v1.parquet",
+      "validation_status": "passed",
+      "parsing_decisions": [
+        "MRACE6-position-107-v1"
+      ],
+      "validation_scope": "source-preserving conversion and numerical consistency",
+      "scientific_review": "pending",
+      "release_tag": "source-v1-alpha",
+      "release_stage": "alpha",
+      "mirror_urls": []
+    },
+    {
+      "year": 2021,
+      "metadata_status": "available",
+      "data_status": "published",
+      "guide_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2021.pdf",
+      "source_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/nat2021us.zip",
+      "published": true,
+      "artifact": "natality_2021_source_v1.parquet",
+      "artifact_bytes": 115451881,
+      "artifact_sha256": "d45fb709daec37312e077447c3cd60bba0ee338f2fbd9a0c688ea750240225f4",
+      "format": "parquet",
+      "records": 3669928,
+      "columns": 237,
+      "source_archive_sha256": "3dea777017a63afce07f9da1b022142b94067b752ebd2d16af4da07291b2ae19",
+      "guide_sha256": "eebabdc2ce679de0ccea1b69aa41786979b9e8b99491bb64281a6f2d3565158f",
+      "parsing_decisions": [
+        "MRACE6-position-107-v1"
+      ],
+      "download_url": "https://github.com/atalaydemiray/natality-data/releases/download/source-v1-alpha/natality_2021_source_v1.parquet",
+      "validation_status": "passed",
+      "validation_scope": "source-preserving conversion and numerical consistency",
+      "scientific_review": "pending",
+      "release_tag": "source-v1-alpha",
+      "release_stage": "alpha",
+      "mirror_urls": []
+    },
+    {
+      "year": 2020,
+      "metadata_status": "available",
+      "data_status": "published",
+      "guide_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2020.pdf",
+      "source_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2020us.zip",
+      "published": true,
+      "artifact": "natality_2020_source_v1.parquet",
+      "artifact_bytes": 114654450,
+      "artifact_sha256": "e18900b0237a3c40a693769fa4728176bb9ab54e55141e1e39353ad68c3e9832",
+      "format": "parquet",
+      "records": 3619826,
+      "columns": 237,
+      "source_archive_sha256": "0a4d0b50c89a65e83dd94086480ad32150da31be3a67fe528eb9fbb426b92a97",
+      "guide_sha256": "52494052020cb8e28a6794b9087b2848ce180e5c5240a9e0146ed157a0fda245",
+      "parsing_decisions": [
+        "MRACE6-position-107-v1"
+      ],
+      "download_url": "https://github.com/atalaydemiray/natality-data/releases/download/source-v1-alpha/natality_2020_source_v1.parquet",
+      "validation_status": "passed",
+      "validation_scope": "source-preserving conversion and numerical consistency",
+      "scientific_review": "pending",
+      "release_tag": "source-v1-alpha",
+      "release_stage": "alpha",
+      "mirror_urls": []
+    },
+    {
+      "year": 2019,
+      "metadata_status": "available",
+      "data_status": "published",
+      "guide_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2019-508.pdf",
+      "source_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2019us.zip",
+      "published": true,
+      "artifact": "natality_2019_source_v1.parquet",
+      "artifact_bytes": 119971501,
+      "artifact_sha256": "b5bfc1ffc16ae7859187d9fdb9184a1c13ac35567cf3dd42b97ddee18782a3cd",
+      "format": "parquet",
+      "records": 3757582,
+      "columns": 238,
+      "source_archive_sha256": "453080600d044766d4549d7ade90b06ae03d6f415844288dbbfd66f7765312b1",
+      "guide_sha256": "780fdc49088976934f520f06f61549f4a0dc38c830735abbf3e9f4796b4a868f",
+      "parsing_decisions": [
+        "MRACE6-position-107-v1"
+      ],
+      "download_url": "https://github.com/atalaydemiray/natality-data/releases/download/source-v1-alpha/natality_2019_source_v1.parquet",
+      "validation_status": "passed",
+      "validation_scope": "source-preserving conversion and numerical consistency",
+      "scientific_review": "pending",
+      "release_tag": "source-v1-alpha",
+      "release_stage": "alpha",
+      "mirror_urls": []
+    },
+    {
+      "year": 2018,
+      "metadata_status": "available",
+      "data_status": "published",
+      "guide_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2018.pdf",
+      "source_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2018us.zip",
+      "published": true,
+      "artifact": "natality_2018_source_v1.parquet",
+      "artifact_bytes": 121089052,
+      "artifact_sha256": "f76eedb6b7fef9ae4d8c63ea87d5a517aa52e41e07160269fecefdbd8d2ad1fa",
+      "format": "parquet",
+      "records": 3801534,
+      "columns": 238,
+      "source_archive_sha256": "d1cba3693416697f16f55c0a032e50ce0f7a256afd80690afded06ebd295a1c6",
+      "guide_sha256": "98723925cb412301bed96d78e6de03ea4a3be6802a3f1061962dbf796ca5a595",
+      "parsing_decisions": [
+        "MRACE6-position-107-v1"
+      ],
+      "download_url": "https://github.com/atalaydemiray/natality-data/releases/download/source-v1-alpha/natality_2018_source_v1.parquet",
+      "validation_status": "passed",
+      "validation_scope": "source-preserving conversion and numerical consistency",
+      "scientific_review": "pending",
+      "release_tag": "source-v1-alpha",
+      "release_stage": "alpha",
+      "mirror_urls": []
+    },
+    {
+      "year": 2017,
+      "metadata_status": "available",
+      "data_status": "published",
+      "guide_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2017.pdf",
+      "source_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2017US.zip",
+      "published": true,
+      "artifact": "natality_2017_source_v1.parquet",
+      "artifact_bytes": 120818764,
+      "artifact_sha256": "c7f06a2936b61b0c3ac655f1c80ea72e8a12d1501d05a80a225185667dabc110",
+      "format": "parquet",
+      "records": 3864754,
+      "columns": 226,
+      "source_archive_sha256": "24a19e1137cd44468e198300c729b7c40f4b88f8da0c08502934e463a0b9444d",
+      "guide_sha256": "be30837777af096f008f38a5949b2f115731ab1c9f6e2ad34884fea0af59b604",
+      "parsing_decisions": [
+        "MRACE6-position-107-v1"
+      ],
+      "download_url": "https://github.com/atalaydemiray/natality-data/releases/download/source-v1-alpha/natality_2017_source_v1.parquet",
+      "validation_status": "passed",
+      "validation_scope": "source-preserving conversion and numerical consistency",
+      "scientific_review": "pending",
+      "release_tag": "source-v1-alpha",
+      "release_stage": "alpha",
+      "mirror_urls": []
+    },
+    {
+      "year": 2016,
+      "metadata_status": "available",
+      "data_status": "published",
+      "guide_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2016.pdf",
+      "source_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2016us.zip",
+      "published": true,
+      "artifact": "natality_2016_source_v1.parquet",
+      "artifact_bytes": 124714372,
+      "artifact_sha256": "c113ed649cb4c9b144ddc32c2239bddff36c305feadd7a88a38a42164617746c",
+      "format": "parquet",
+      "records": 3956112,
+      "columns": 227,
+      "source_archive_sha256": "fc7103274263e97d0103bd125562ac98fadae6d17f5992123290f41b27eff01e",
+      "guide_sha256": "d8b58a0e422fdd364b93a2a523293673db2e3dea90e526141e5e91a8d91655ff",
+      "parsing_decisions": [
+        "MRACE6-position-107-v1"
+      ],
+      "download_url": "https://github.com/atalaydemiray/natality-data/releases/download/source-v1-alpha/natality_2016_source_v1.parquet",
+      "validation_status": "passed",
+      "validation_scope": "source-preserving conversion and numerical consistency",
+      "scientific_review": "pending",
+      "release_tag": "source-v1-alpha",
+      "release_stage": "alpha",
+      "mirror_urls": []
+    },
+    {
+      "year": 2015,
+      "metadata_status": "available",
+      "data_status": "published",
+      "guide_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2015.pdf",
+      "source_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2015us.zip",
+      "published": true,
+      "artifact": "natality_2015_source_v1.parquet",
+      "artifact_bytes": 329840851,
+      "artifact_sha256": "8c4948517a3fb872c2861e1b3472c1d80b357f0922e64720ff9671334fabc82c",
+      "format": "parquet",
+      "records": 3988733,
+      "columns": 242,
+      "documented_source_fields": 241,
+      "auxiliary_columns": [
+        "natality_source_record"
+      ],
+      "source_value_issues": [
+        {
+          "id": "race-unlisted-codes-2015",
+          "year": 2015,
+          "fields": [
+            "MRACE31",
+            "MRACE6",
+            "MRACE15"
+          ],
+          "codes": {
+            "MRACE31": [
+              "99"
+            ],
+            "MRACE6": [
+              "9"
+            ],
+            "MRACE15": [
+              "99"
+            ]
+          },
+          "occurrence_records": 2923,
+          "source_archive_sha256": "b2de4b43a836f2ffafdf6a49c08204d0da836f8887d92a9e0fd88fc24ba4ec00",
+          "guide_pages": [
+            8,
+            9
+          ],
+          "status": "unresolved source-value meanings",
+          "note": "The complete 2015 U.S. source contains 2,923 occurrence records with MRACE31=99, MRACE6=9 and MRACE15=99 together. These codes are absent from the corresponding annual layout entries. Their meanings are not established here; they are preserved literally without race-category labels or automatic missing-value conversion. All other nonblank MRACE6/MRACE15 pairs follow the documented aggregation. This is a source-data observation, not a harmonization decision."
+        }
+      ],
+      "source_archive_sha256": "b2de4b43a836f2ffafdf6a49c08204d0da836f8887d92a9e0fd88fc24ba4ec00",
+      "guide_sha256": "156ab8d2889801f3173266e097ce506c298893a6b5223688e6dd5bd403eb8448",
+      "parsing_decisions": [
+        "MRACE6-position-107-v1",
+        "reserved-source-record-2014-2015-v1"
+      ],
+      "download_url": "https://github.com/atalaydemiray/natality-data/releases/download/source-v1-alpha/natality_2015_source_v1.parquet",
+      "validation_status": "passed",
+      "validation_scope": "source-preserving conversion and numerical consistency",
+      "scientific_review": "pending",
+      "dictionary_file": "dictionary-v2.json",
+      "dictionary_sha256": "160f50087b91e7ff874c8e89a2a5054759462983820b2e9bee5ee295c72ccb6a",
+      "release_tag": "source-v1-alpha",
+      "release_stage": "alpha",
+      "mirror_urls": []
+    },
+    {
+      "year": 2014,
+      "metadata_status": "available",
+      "data_status": "published",
+      "guide_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2014.pdf",
+      "source_url": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/DVS/natality/Nat2014us.zip",
+      "published": true,
+      "artifact": "natality_2014_source_v1.parquet",
+      "artifact_bytes": 327466832,
+      "artifact_sha256": "ba43b451caba823c913176006bc8e436297182800955961c1f6088b6873b7bbc",
+      "format": "parquet",
+      "records": 3998175,
+      "columns": 242,
+      "documented_source_fields": 241,
+      "auxiliary_columns": [
+        "natality_source_record"
+      ],
+      "source_value_issues": [],
+      "source_archive_sha256": "38d009deb578ec93f95b29c2c6cac668c89bbc51d5c7e0a6e2e268876163e55d",
+      "guide_sha256": "b9beb4043e93167be4ec6c91f6ea28be1fb53c400f1338be77de5d2bec959654",
+      "parsing_decisions": [
+        "MRACE6-position-107-v1",
+        "reserved-source-record-2014-2015-v1"
+      ],
+      "download_url": "https://github.com/atalaydemiray/natality-data/releases/download/source-v1-alpha/natality_2014_source_v1.parquet",
+      "validation_status": "passed",
+      "validation_scope": "source-preserving conversion and numerical consistency",
+      "scientific_review": "pending",
+      "dictionary_file": "dictionary-v2.json",
+      "dictionary_sha256": "0f3e3ac5047b63facc2d035b144f63ec4a005fd958b14a70fceef52a0bada0cd",
+      "release_tag": "source-v1-alpha",
+      "release_stage": "alpha",
+      "mirror_urls": []
+    }
+  ]
+}

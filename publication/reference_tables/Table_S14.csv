@@ -1,0 +1,12 @@
+Comparison,Records / events,Exposed records,"Standardized risk per 1,000, reference / exposed",RR (95% CI),"RD per 1,000 (95% CI)",Crossover age (local 95% CI),Ages with lower | higher recorded risk for the exposed group supported (simultaneous 95% band)
+"Comparison outcome preterm birth, SS vs SN population","1,980,559 / 221,149","1,480,543",88.1 / 119.1,"1.352 (1.338, 1.366)","31.00 (30.00, 32.00)",none,"none | [15.000, 45.000]"
+"Comparison outcome preterm birth, SS vs NN population","29,576,508 / 2,351,936","1,480,543",77.8 / 110.2,"1.416 (1.409, 1.423)","32.36 (31.83, 32.89)",none,"none | [15.000, 45.000]"
+"Comparison outcome preterm birth, S vs N","30,097,165 / 2,395,589","1,984,054",77.9 / 102.5,"1.315 (1.309, 1.321)","24.53 (24.08, 24.98)",none,"none | [15.000, 45.000]"
+"SS vs SN population, non-Hispanic White","1,482,055 / 122,752","1,136,646",88.2 / 80.8,"0.917 (0.905, 0.928)","-7.35 (-8.44, -6.26)","32.6 (31.6, 33.6)","(17.028, 31.219) | (34.878, 40.906)"
+"SS vs SN population, non-Hispanic Black","220,745 / 22,969","161,637",103.6 / 104.1,"1.005 (0.977, 1.033)","0.47 (-2.43, 3.37)","22.4 (18.6, 26.2)",none | none
+"SS vs SN population, Hispanic","148,900 / 11,866","89,665",77.4 / 81.0,"1.047 (1.009, 1.086)","3.60 (0.71, 6.50)","24.2 (20.4, 28.1)",none | none
+"SS vs SN population, other groups combined","128,859 / 11,205","92,595",86.5 / 87.0,"1.006 (0.966, 1.048)","0.52 (-3.00, 4.03)","28.4 (25.0, 31.8)",none | none
+"SS vs NN population, non-Hispanic White","15,244,019 / 1,345,928","1,136,646",88.4 / 90.2,"1.020 (1.013, 1.027)","1.74 (1.11, 2.36)","29.7 (29.5, 30.0)","(15.205, 29.269) | (30.171, 45.000]"
+"SS vs NN population, non-Hispanic Black","4,055,514 / 410,213","161,637",100.9 / 107.1,"1.062 (1.046, 1.078)","6.25 (4.62, 7.88)","24.7 (22.8, 26.6)","(17.374, 21.042) | (27.713, 45.000]"
+"SS vs NN population, Hispanic","7,422,678 / 508,024","89,665",68.3 / 79.8,"1.167 (1.141, 1.194)","11.44 (9.64, 13.25)","19.8 (15.8, 23.8)","none | (23.734, 44.240)"
+"SS vs NN population, other groups combined","2,854,297 / 183,518","92,595",64.1 / 71.9,"1.122 (1.095, 1.151)","7.85 (6.07, 9.63)","23.1 (21.1, 25.1)","none | (26.100, 41.072)"

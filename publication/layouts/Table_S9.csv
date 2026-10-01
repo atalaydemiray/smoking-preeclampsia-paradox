@@ -1,0 +1,9 @@
+Scenario,Replications,Fixed-null-age coverage (95% Monte Carlo CI),Whole-domain coverage under global null,Simultaneous reversal detected (95% Monte Carlo CI)
+global null,,,,
+constant positive,,,,
+constant negative,,,,
+varying positive,,,,
+strong reversal,,,,
+moderate reversal,,,,
+weak reversal,,,,
+near boundary reversal,,,,

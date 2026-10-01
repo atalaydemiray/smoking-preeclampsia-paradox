@@ -1,4 +1,4 @@
-name: R code
+name: Publication reconstruction
 
 on:
   push:
@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   reproduce:
-    name: Rebuild every table and figure, and check them against the published versions
+    name: October aggregate reconstruction and source checks
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -31,8 +31,23 @@ jobs:
             for (f in fs) tryCatch(parse(f), error = function(e) stop(f, ": ", conditionMessage(e)));
             cat(length(fs), "R files parsed\n")'
 
-      # run_all.R stops on its own if a table no longer matches results/exhibit_checksums.csv,
-      # so a change that moved a number fails here rather than passing quietly.
+      - name: Verify imported source hashes and publication file types
+        run: python3 tests/check_source_integrity.py
+
+      - name: Check public repository contents
+        run: python3 tests/check_release_contents.py
+
+      - name: Test inert sourcing and isolated runner safety
+        run: Rscript --vanilla tests/check_current_runner.R
+
+      - name: Test crossover inference and risk reporting on synthetic data
+        working-directory: model-fitting/current
+        run: |
+          Rscript --vanilla tests/test_age_crossover.R
+          Rscript --vanilla tests/test_effect_reporting.R
+
+      # This checks aggregate reconstruction, not a 30-million-record rerun.
+      # No record-level inputs are distributed or downloaded by CI.
       - name: Reproduce the tables and figures
         run: Rscript run_all.R
 

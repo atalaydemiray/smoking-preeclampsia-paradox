@@ -1,0 +1,10 @@
+population,variable,eligible_n,unknown_n,unknown_percent
+prepregnancy,year_factor,31362709,0,0
+prepregnancy,race_ethnicity,31362709,268902,0.857394047178769
+prepregnancy,prepreg_diabetes,31362709,0,0
+prepregnancy,prior_living4,31362709,40771,0.129998336559511
+prepregnancy,education4,31362709,441538,1.40784394613361
+prepregnancy,bmi,31362709,673546,2.1476014715438
+prepregnancy,prior_preterm,31362709,0,0
+prepregnancy,prior_cesarean,31362709,0,0
+prepregnancy,nativity,31362709,57991,0.184904307851723

@@ -1,0 +1,10 @@
+# Preserve exact bytes of hash-pinned statistical sources and aggregate evidence.
+model-fitting/current/** -text
+publication/** -text
+results/** -text
+
+# CSV exports legitimately retain their original CRLF line endings.
+*.csv whitespace=cr-at-eol
+
+# Keep the original R session reports byte-identical, including printed padding.
+publication/Code/interaction_tests/*/sessionInfo.txt -whitespace

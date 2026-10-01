@@ -1,0 +1,307 @@
+{
+  "status": "complete_joint_three_group_fit",
+  "model": "joint_3group",
+  "protocol": "addendum H, 19 September 2026",
+  "mode": "full",
+  "years": [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+  "eligible_n": 31362709,
+  "fit_n": 30076524,
+  "events": 2496317,
+  "n_by_group": {
+    "NN": 28095965,
+    "SN": 500016,
+    "SS": 1480543
+  },
+  "events_by_group": {
+    "NN": 2327525,
+    "SN": 48634,
+    "SS": 120158
+  },
+  "reference": "pooled SS, SN, NN complete cases (fit rows)",
+  "input_signature": "7be00dca8b740b5c942fa6049e8fde7d308ab6f4ea4ff691dd135e72f6ecd7d4",
+  "input_signature_method": "columnwise SHA256 of fit data and identity keys; formula; age basis; code manifest",
+  "age_domain": [15, 45],
+  "formula": "Y ~ A * splines::ns(age, knots = c(21, 27, 35), Boundary.knots = c(15, 45), intercept = FALSE) + year_factor + race_ethnicity + prepreg_diabetes + prior_living4 + education4 + splines::ns(bmi, knots = c(19.6, 26.1, 37.8), Boundary.knots = c(13, 69.9), intercept = FALSE) + prior_preterm + prior_cesarean + nativity + SN + SN:splines::ns(age, knots = c(21, 27, 35), Boundary.knots = c(15, 45), intercept = FALSE)",
+  "age_knots": [21, 27, 35],
+  "age_boundaries": [15, 45],
+  "covariates": ["year_factor", "race_ethnicity", "prepreg_diabetes", "prior_living4", "education4", "bmi", "prior_preterm", "prior_cesarean", "nativity"],
+  "coefficient_blocks": {
+    "A": ["A", "A:splines::ns(age, knots = c(21, 27, 35), Boundary.knots = c(15, 45), intercept = FALSE)1", "A:splines::ns(age, knots = c(21, 27, 35), Boundary.knots = c(15, 45), intercept = FALSE)2", "A:splines::ns(age, knots = c(21, 27, 35), Boundary.knots = c(15, 45), intercept = FALSE)3", "A:splines::ns(age, knots = c(21, 27, 35), Boundary.knots = c(15, 45), intercept = FALSE)4"],
+    "SN": ["SN", "splines::ns(age, knots = c(21, 27, 35), Boundary.knots = c(15, 45), intercept = FALSE)1:SN", "splines::ns(age, knots = c(21, 27, 35), Boundary.knots = c(15, 45), intercept = FALSE)2:SN", "splines::ns(age, knots = c(21, 27, 35), Boundary.knots = c(15, 45), intercept = FALSE)3:SN", "splines::ns(age, knots = c(21, 27, 35), Boundary.knots = c(15, 45), intercept = FALSE)4:SN"]
+  },
+  "no_imputation": true,
+  "iterations": 5,
+  "score_max": 6.9226651078224677e-09,
+  "two_pattern_self_check_max_relative_deviation": 4.4672845968419794e-15,
+  "validated_against_pair": false,
+  "code": [
+    {
+      "path": "age45_revision/R/01_measurement_helpers.R",
+      "sha256": "c1ee207dd0f84c962b82864c5d7aff4e90d9829f6b6fd6557e15f10e45862372",
+      "_row": "age45_revision/R/01_measurement_helpers.R"
+    },
+    {
+      "path": "age45_revision/R/03_natality_adapter.R",
+      "sha256": "a03ab6ea5ed0bb0744148f524842bbdc0fadb9b14439fb3eaa786b7b2622539e",
+      "_row": "age45_revision/R/03_natality_adapter.R"
+    },
+    {
+      "path": "age45_revision/R/08_linked_clinical_adapter.R",
+      "sha256": "ba433719a96b4b2d058c777bf6b39570d6a174f96af4bffa880fe606fd7aa07e",
+      "_row": "age45_revision/R/08_linked_clinical_adapter.R"
+    },
+    {
+      "path": "age45_revision/R/09_fetal_clinical_adapter.R",
+      "sha256": "272448dc915311f9b5868e8f8e54dbcab3adfb4a5d1aa475b8c9bd6ab321e47e",
+      "_row": "age45_revision/R/09_fetal_clinical_adapter.R"
+    },
+    {
+      "path": "age45_revision/R/10_model_specification.R",
+      "sha256": "44c9d8891b4d221979e360844a05b480536b5ffe239a54e8716a47c1b8789768",
+      "_row": "age45_revision/R/10_model_specification.R"
+    },
+    {
+      "path": "age45_revision/R/22_linked_mortality_preparation.R",
+      "sha256": "c4a35ea43aeb8794ad21b2e72ee0ec683602111e709dfb8ed9ebbcdc0b13ee34",
+      "_row": "age45_revision/R/22_linked_mortality_preparation.R"
+    },
+    {
+      "path": "age45_revision/R/24_pregnancy_endpoint_preparation.R",
+      "sha256": "3b32609598d54fb633f79ebb547c583471c578aa4614d13dee9887e3043a5778",
+      "_row": "age45_revision/R/24_pregnancy_endpoint_preparation.R"
+    },
+    {
+      "path": "age45_revision/R/fit_helpers.R",
+      "sha256": "cb34df6d3ab1d93486dbd4aabbd67d0ddda5fa44f9e03927ea6a009a74691552",
+      "_row": "age45_revision/R/fit_helpers.R"
+    },
+    {
+      "path": "age45_revision/scripts/03_fit_natality.R",
+      "sha256": "814e4baca2edcbcedf18828031004fcfb3741e63ab4d57af0972d046d7a773f6",
+      "_row": "age45_revision/scripts/03_fit_natality.R"
+    },
+    {
+      "path": "age45_revision/scripts/06_fit_adjunct_models.R",
+      "sha256": "fcf6d81e294b5d59f80ee263462ec4701039948f3c78aecd73c95de5ab43b56f",
+      "_row": "age45_revision/scripts/06_fit_adjunct_models.R"
+    },
+    {
+      "path": "R/04_standardization.R",
+      "sha256": "27c262490d26117a04a0a729a4dfd8a9db1395ba2cc61eff73c27447b079080a",
+      "_row": "R/04_standardization.R"
+    },
+    {
+      "path": "R/06_mi_pooling.R",
+      "sha256": "01fd41b5e1195fcf6e91d7629da7dd1c73d1958868d563072bdce2b6411afcf5",
+      "_row": "R/06_mi_pooling.R"
+    },
+    {
+      "path": "R/11_streaming_standardization.R",
+      "sha256": "b5152ff7216d2e019b0dafc64343a04e80b988c2df43daaf75a4f69a384fdcdb",
+      "_row": "R/11_streaming_standardization.R"
+    },
+    {
+      "path": "R/13_paired_source_comparison.R",
+      "sha256": "072ceda77764b7d8892d0008e46a4e10b6b99b44cd2a27f17e618e7f1fc7f818",
+      "_row": "R/13_paired_source_comparison.R"
+    },
+    {
+      "path": "R/15_overall_standardization.R",
+      "sha256": "8c4717a36e4deac8cb79a2bca87abc93330d63be54514e47d6cece0f3f809ea6",
+      "_row": "R/15_overall_standardization.R"
+    },
+    {
+      "path": "R/20_overall_paired.R",
+      "sha256": "071fd4097e24999f06cb0a3bd70f55ccd6027886e58268543f5da0e51cbd05e0",
+      "_row": "R/20_overall_paired.R"
+    },
+    {
+      "path": "R/26_age_crossover.R",
+      "sha256": "6ff2870bc56d0f522d2eb47c97197fe81ab1a2d4c4a6e49667052d9157d2b630",
+      "_row": "R/26_age_crossover.R"
+    },
+    {
+      "path": "age45_revision/scripts/20_prepare_supplementary_inputs.R",
+      "sha256": "026092a4f9eb2eca3ff49eac32b4261560be078d15c7ddb4904b5d36a01b3d2f",
+      "_row": "1"
+    },
+    {
+      "path": "age45_revision/scripts/33_fit_joint_three_group.R",
+      "sha256": "36cecd6fc5ed5aeab50ce755e3688e511c782586656828d47a0397d38ec20934",
+      "_row": "2"
+    }
+  ],
+  "elapsed_seconds": 1023.8521258831024,
+  "outputs": [
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/age_group_support.csv",
+      "sha256": "e3b420e33e710d6f072deb7723582a1c33882f7173932143afbbbf15bb8ef281",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/age_group_support.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/coefficient_blocks.txt",
+      "sha256": "bfa9305ea978451034e890d7c8522554c533804761fc9517f25a824d0f6c7e05",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/coefficient_blocks.txt"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/fit_log.txt",
+      "sha256": "6371c0717df33001ac1c9a4d1b8ec76c10b7c50513991ec751d941b6539d7a8b",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/fit_log.txt"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/HC0_three_group_curves.csv",
+      "sha256": "d72500f44f47fddbd3770cb262278211edef1927dce21d7c25c801c21d5555af",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/HC0_three_group_curves.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/model.rds",
+      "sha256": "ddf987ef83a584228e0cee6787ec991be3a8e1f5eb72823156860aa981117d60",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/model.rds"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/HC0_age_standardized.csv",
+      "sha256": "363c86b17497aaa5c25c9170320d4ad777782c58ef1f80f18c4def654e63b22d",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/HC0_age_standardized.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/HC0_crossover.rds",
+      "sha256": "1305944013dc099cfa83196c9572aa916e10273ba9200f5f5c916ad19d97e225",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/HC0_crossover.rds"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/HC0_joint_standardization.rds",
+      "sha256": "853ed9ce3cb12f8e031f2fa172965b44bcb16066a0d8a2005dd4d2d76eb80cd4",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/HC0_joint_standardization.rds"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/HC0_overall_standardized.csv",
+      "sha256": "82f3e125cf548670d3d1c966c1f62adf01b00af6d3085c61a441d5d85eee2dc4",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/HC0_overall_standardized.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/HC0_pointwise_null_age_set.csv",
+      "sha256": "b62f27dbaa9c02540d4320b4b6fb1b450152e0349c63ae2d1b2ee06225aceeba",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/HC0_pointwise_null_age_set.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/HC0_roots.csv",
+      "sha256": "56ad8cf913e06728a3e24144c27937c4d013b63ad40a52253ec823026f429816",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/HC0_roots.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/HC0_simultaneous_null_age_set.csv",
+      "sha256": "1b4bd85c0f54dd410f1d993f746b9d782a56ff0fa9068d02ab0741e2da4bc5a3",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/HC0_simultaneous_null_age_set.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/model_age_standardized.csv",
+      "sha256": "7ef90ac0e13f10bda1abbd061563e31c7f43ff4f80104249301e4303a091e024",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/model_age_standardized.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/model_crossover.rds",
+      "sha256": "494bdc2d0e58cefb445624d68e2a5fec854af9a4d36ec32f35bef06a7d42d647",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/model_crossover.rds"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/model_joint_standardization.rds",
+      "sha256": "16969078178fd7d9eb7f23904defe89eb4e912f69867f025e1c40f40a3e796a5",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/model_joint_standardization.rds"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/model_overall_standardized.csv",
+      "sha256": "1c0b2730443c76aeebc05a5b6efb5214c40e0c840e19d5e555a478d7de2fdf51",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/model_overall_standardized.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/model_pointwise_null_age_set.csv",
+      "sha256": "0827f852ba595b46c7c7fdb3ff93f35b63367d3c4f2db99bf0d2da954d195d76",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/model_pointwise_null_age_set.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/model_roots.csv",
+      "sha256": "d8c4d3bff7dc0cd73f60d0c317bdf532ebf2947cb49087711f6a854a70a02baf",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/model_roots.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/model_simultaneous_null_age_set.csv",
+      "sha256": "252611fdaba3afa88798161eba39fee0f9ee6c912bc6e85ce948e5165291fc1a",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/sn_vs_nn/model_simultaneous_null_age_set.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/HC0_age_standardized.csv",
+      "sha256": "438ff560f6339bc6575d6bbe6346bbf6638960094f9e6a74ad72b4a3b706c6d6",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/HC0_age_standardized.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/HC0_crossover.rds",
+      "sha256": "7116825a9c6b45cb42ec34d101c12892ca8fbc15ea97ca4668b7fceb9f980818",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/HC0_crossover.rds"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/HC0_joint_standardization.rds",
+      "sha256": "34e2904a83d4e5d3b42c82cc5e03c67860324c52edd5cb09f4be56cd6f238166",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/HC0_joint_standardization.rds"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/HC0_overall_standardized.csv",
+      "sha256": "5eb436bf97cf402d8fed1a8b139c1ac0af4826e052160cb659c48fbe18ebb041",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/HC0_overall_standardized.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/HC0_pointwise_null_age_set.csv",
+      "sha256": "a92eb7cf8a5b167f2ddae5fc3549da7b8e7acbc3d7d39480cbcd09d382b8e4c9",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/HC0_pointwise_null_age_set.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/HC0_roots.csv",
+      "sha256": "32e0150f3d6a6c59541ff7cad7957f7f5f2002000e370111d2f0687071c366bf",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/HC0_roots.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/HC0_simultaneous_null_age_set.csv",
+      "sha256": "3a59810a4e1bd4d1b1d036871ef67a96910f241a3dd2303d6494b5ae3bfa38d8",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/HC0_simultaneous_null_age_set.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/model_age_standardized.csv",
+      "sha256": "c58b9388b2958badb4e525dd86c2706d462ea58b91a1161e8fde92e193567655",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/model_age_standardized.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/model_crossover.rds",
+      "sha256": "e973daed230982b6a5b56faa663a62274c1d885d8bd9bba75911330441fa46bc",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/model_crossover.rds"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/model_joint_standardization.rds",
+      "sha256": "684312f662b318030be018f9c658b813568fc5c59549911fc9bff41087a2f8ff",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/model_joint_standardization.rds"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/model_overall_standardized.csv",
+      "sha256": "58d1f5dbe02ce290aaebe67d48c094bdfe47bae25f818ed2daf1ac6bd1958860",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/model_overall_standardized.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/model_pointwise_null_age_set.csv",
+      "sha256": "2ca51d29aa1661bba3e706bca719c36e5751171ba8af351ff888110502096782",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/model_pointwise_null_age_set.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/model_roots.csv",
+      "sha256": "6cb1df8ee224aab7be9107f1d659cc31ef12ca367a4680800994f531cef97b76",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/model_roots.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/model_simultaneous_null_age_set.csv",
+      "sha256": "70cacb43727ee911a636307bab4937d6a080ed4f845751cee9e5de2f857b5d1f",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/ss_vs_nn/model_simultaneous_null_age_set.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/joint_3group/validation_against_pair.csv",
+      "sha256": "1ef3391613c07d23a4cfffc7dd7c430865a59ca7e7b384fd7e102ca1e176c0a5",
+      "_row": "age45_revision/outputs/supplementary/joint_3group/validation_against_pair.csv"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+check,absolute_difference,tolerance,passed
+subset_full_coefficients,5.95345994724994e-12,1e-07,TRUE
+subset_reduced_coefficients,5.80913095404867e-12,1e-07,TRUE
+subset_full_deviance,1.45519152283669e-10,1e-06,TRUE
+subset_reduced_deviance,1.74622982740402e-10,1e-06,TRUE
+subset_LRT,2.91038304567337e-11,1e-06,TRUE
+subset_HC0_covariance,3.3339164762225e-12,1e-07,TRUE
+subset_HC0_Wald,1.49302792351591e-12,1e-06,TRUE
+full_record_deviance,0,1e-05,TRUE
+full_record_score_vs_saved,0,1e-06,TRUE
+full_record_max_score_per_record,2.30168390064705e-16,1e-12,TRUE
+full_record_model_covariance,0,1e-10,TRUE
+full_record_HC0_covariance,0,1e-10,TRUE

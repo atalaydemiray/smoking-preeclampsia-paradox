@@ -1,0 +1,97 @@
+group,level,n,variable,percent
+NN,2016,3209814,year_factor,11.424466111059
+SS,2016,248236,year_factor,16.7665511910157
+SN,2016,89113,year_factor,17.8220296950498
+NN,2017,3162920,year_factor,11.2575595819542
+SS,2017,231675,year_factor,15.6479751010271
+SN,2017,81473,year_factor,16.2940785894851
+NN,2018,3133905,year_factor,11.1542885250605
+SN,2018,73928,year_factor,14.78512687594
+SS,2018,214684,year_factor,14.5003556127718
+NN,2019,3114238,year_factor,11.0842891497053
+SS,2019,193555,year_factor,13.0732440732893
+SN,2019,66105,year_factor,13.2205769415379
+NN,2020,3032188,year_factor,10.7922543326061
+SS,2020,172720,year_factor,11.6659901130869
+SN,2020,56456,year_factor,11.2908386931618
+NN,2021,3102358,year_factor,11.0420054979425
+SN,2021,47296,year_factor,9.45889731528591
+SS,2021,144402,year_factor,9.75331348025691
+NN,2022,3131589,year_factor,11.1460453485047
+SN,2022,35374,year_factor,7.07457361364436
+SS,2022,113552,year_factor,7.66961851158663
+NN,2023,3085454,year_factor,10.9818402749292
+SN,2023,28010,year_factor,5.60182074173626
+SS,2023,90221,year_factor,6.0937777558639
+NN,2024,3123499,year_factor,11.1172511782386
+SS,2024,71498,year_factor,4.8291741611017
+SN,2024,22261,year_factor,4.45205753415891
+NN,Non-Hispanic White,14107373,race_ethnicity,50.2113844461296
+NN,Non-Hispanic Asian,1888411,race_ethnicity,6.72128898224354
+NN,Non-Hispanic AIAN,183931,race_ethnicity,0.654652723264711
+NN,Non-Hispanic multiple race,617909,race_ethnicity,2.19928021692795
+SS,Non-Hispanic White,1136646,race_ethnicity,76.7722382936531
+NN,Hispanic,7333013,race_ethnicity,26.0998794666779
+SN,Non-Hispanic White,345409,race_ethnicity,69.0795894531375
+SS,Hispanic,89665,race_ethnicity,6.05622396647716
+NN,Non-Hispanic Black,3893877,race_ethnicity,13.8592036258587
+SN,Non-Hispanic AIAN,8627,race_ethnicity,1.72534478896675
+SS,Non-Hispanic AIAN,27370,race_ethnicity,1.84864607106987
+SN,Non-Hispanic multiple race,20442,race_ethnicity,4.08826917538639
+NN,Non-Hispanic NHOPI,71451,race_ethnicity,0.254310538897667
+SS,Non-Hispanic multiple race,56640,race_ethnicity,3.82562343680663
+SS,Non-Hispanic NHOPI,2108,race_ethnicity,0.14238019429358
+SS,Non-Hispanic Asian,6477,race_ethnicity,0.437474629240758
+SN,Non-Hispanic Asian,6165,race_ethnicity,1.23296054526255
+SN,Non-Hispanic NHOPI,1030,race_ethnicity,0.205993408210937
+SN,Hispanic,59235,race_ethnicity,11.8466209081309
+SN,Non-Hispanic Black,59108,race_ethnicity,11.8212217209049
+SS,Non-Hispanic Black,161637,race_ethnicity,10.9174134084589
+NN,No,27849307,prepreg_diabetes,99.1220874598897
+SS,No,1465367,prepreg_diabetes,98.9749706695449
+SN,No,495139,prepreg_diabetes,99.0246312118012
+NN,Yes,246658,prepreg_diabetes,0.877912540110297
+SS,Yes,15176,prepreg_diabetes,1.02502933045511
+SN,Yes,4877,prepreg_diabetes,0.975368788198778
+NN,3 or more,3236716,prior_living4,11.5202165150761
+NN,0,11243228,prior_living4,40.0172337914003
+NN,2,4599393,prior_living4,16.3702973006978
+NN,1,9016628,prior_living4,32.0922523928258
+SS,0,419610,prior_living4,28.3416287132491
+SS,3 or more,311872,prior_living4,21.0647039633432
+SN,1,143934,prior_living4,28.7858788518767
+SS,2,319209,prior_living4,21.5602653891174
+SN,2,76080,prior_living4,15.2155131035807
+SS,1,429852,prior_living4,29.0334019342903
+SN,0,230688,prior_living4,46.1361236440434
+SN,3 or more,49314,prior_living4,9.86248440049918
+NN,Bachelor or higher,10259351,education4,36.5153893094613
+NN,Less than high school,3179972,education4,11.3182515709996
+NN,Some college or associate,7619966,education4,27.1212111774769
+NN,High school or GED,7036676,education4,25.0451479420621
+SS,High school or GED,649977,education4,43.9012578493161
+SN,Bachelor or higher,54070,education4,10.8136539630732
+SS,Some college or associate,424531,education4,28.6740067664364
+SS,Bachelor or higher,48671,education4,3.28737496985903
+SN,Some college or associate,188039,education4,37.6065965889092
+SS,Less than high school,357364,education4,24.1373604143885
+SN,High school or GED,190897,education4,38.1781782982945
+SN,Less than high school,67010,education4,13.4015711497232
+NN,No,27189916,prior_preterm,96.7751632663267
+NN,Yes,906049,prior_preterm,3.22483673367332
+SS,No,1378376,prior_preterm,93.0993561146147
+SS,Yes,102167,prior_preterm,6.90064388538529
+SN,No,479544,prior_preterm,95.9057310166075
+SN,Yes,20472,prior_preterm,4.09426898339253
+NN,No,23880261,prior_cesarean,84.9953400781927
+NN,Yes,4215704,prior_cesarean,15.0046599218073
+SS,No,1208297,prior_cesarean,81.6117465011148
+SN,Yes,70117,prior_cesarean,14.0229512655595
+SS,Yes,272246,prior_cesarean,18.3882534988852
+SN,No,429899,prior_cesarean,85.9770487344405
+NN,Born elsewhere including territories,6759996,nativity,24.0603802005021
+NN,Born in 50 US states,21335969,nativity,75.9396197994979
+SS,Born in 50 US states,1449851,nativity,97.9269767916231
+SN,Born in 50 US states,472959,nativity,94.5887731592589
+SS,Born elsewhere including territories,30692,nativity,2.07302320837693
+SN,Born elsewhere including territories,27057,nativity,5.4112268407411

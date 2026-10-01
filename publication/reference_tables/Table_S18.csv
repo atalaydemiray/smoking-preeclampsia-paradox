@@ -1,0 +1,8 @@
+Population,Test,Interaction hypothesis,Complete cases,Chi-square,df,P value,Holm-adjusted P value
+Primary three-group,Likelihood ratio (model based),All smoking-by-age spline interactions equal zero,"30,076,524",2161.41,8,<0.001,<0.001
+Primary three-group,Omnibus Wald (HC0),All smoking-by-age spline interactions equal zero,"30,076,524",2136.73,8,<0.001,<0.001
+Secondary before-pregnancy,Likelihood ratio (model based),All smoking-by-age spline interactions equal zero,"30,097,165",1901.18,4,<0.001,<0.001
+Secondary before-pregnancy,Omnibus Wald (HC0),All smoking-by-age spline interactions equal zero,"30,097,165",1881.96,4,<0.001,<0.001
+Primary three-group,Contrast Wald (HC0; exploratory),SN versus SS age-interaction coefficients equal zero,"30,076,524",198.40,4,<0.001,<0.001
+Primary three-group,Contrast Wald (HC0; exploratory),NN versus SS age-interaction coefficients equal zero,"30,076,524",2024.19,4,<0.001,<0.001
+Primary three-group,Contrast Wald (HC0; exploratory),SN versus NN age-interaction coefficients equal zero,"30,076,524",147.18,4,<0.001,<0.001

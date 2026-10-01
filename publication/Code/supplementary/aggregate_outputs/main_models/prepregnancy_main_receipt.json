@@ -1,0 +1,251 @@
+{
+  "status": "complete_validated_age15_45_fit",
+  "model": "prepregnancy_main",
+  "eligible_n": 31362709,
+  "fit_n": 30097165,
+  "events": 2498098,
+  "A0": 28113111,
+  "A1": 1984054,
+  "age45_n": 28835,
+  "age45_events": 3618,
+  "reference_n": 30097165,
+  "input_signature": "e1d31c3b9f5d7ae35f7d36468a3d4f60e44ba0cdede2d0fa1c759c920c4e00b3",
+  "input_signature_method": "columnwise SHA256; reference equals fit population",
+  "data_column_fingerprint": "9bdc95b4362745274b5d5295c5ce4ca043980a4768d3122e2936eae17438a6a2",
+  "identity_column_fingerprint": "870f250a3db60d5032edaa51fb2290ea03622e3fff9d2cb208bff1b6fdb0cc46",
+  "annual_sources": {
+    "2016": {
+      "year": 2016,
+      "receipt_sha256": "7e46d44bd4f6eb84285516fa14ad65eb39e813124a7241748e7f5447b82fb381",
+      "data_sha256": "be0157d4b5efdef697d66aca3937d2c99e459aa0e274b2f1a38368cceb7b088f"
+    },
+    "2017": {
+      "year": 2017,
+      "receipt_sha256": "66a6235856b10bee773ba9e324ed8d509bc396cfe90e25b57dd4df17e3fdf5cd",
+      "data_sha256": "2e0b15e6191cf32a999788ee7c64d9419aae718dd89f11e8e18c1d1743972f99"
+    },
+    "2018": {
+      "year": 2018,
+      "receipt_sha256": "b1e8972a6579b394068d460993a667fa7cc9427465f6442b4e52fbce701700ed",
+      "data_sha256": "ef7502348854a430ab976aa055a13d11035b5945b90eb2feb934287ed494106d"
+    },
+    "2019": {
+      "year": 2019,
+      "receipt_sha256": "0094e0b88c5a6f2909a3275b6a76a8ff13e9605e3cd349cbdf5fc1c4960dc3dd",
+      "data_sha256": "aa741fd631802ecc5cee3a2479db9004fa97a7edb06cc3d67afea8ad17609d9f"
+    },
+    "2020": {
+      "year": 2020,
+      "receipt_sha256": "45b5f38a597a4c39e4d3d4902a3c7127daaf40881b6763db298a1d22765209d6",
+      "data_sha256": "647b260fae7a06eb512d31a6cf80fbad3af16d2ce3ed3036b40aab23ed09e6a7"
+    },
+    "2021": {
+      "year": 2021,
+      "receipt_sha256": "09567497f23026eb5757d45e2aaf661b081b7d8d2f38bb2eed56bb2547178674",
+      "data_sha256": "c709cbd8d1d3448840aa1057ef28b9c662e6c4f0cf1b92a86d2210677a29a665"
+    },
+    "2022": {
+      "year": 2022,
+      "receipt_sha256": "307d6e2038938c4c84bf01dde0649c5ae4c21896567a5bc1fe2fa2b6e826df0b",
+      "data_sha256": "95d93e13533f8860ab852510baebfb4220daf6c49f33c81d0a4d9b0dc3629ff9"
+    },
+    "2023": {
+      "year": 2023,
+      "receipt_sha256": "77d40c6b6f066908dab9f58823891a2086fc0bf907ee4476ba6a89bf00a1355e",
+      "data_sha256": "df3bc1689010a2c74af99043c89bce7367f0f9c99323c5d35350e83ff1a104ba"
+    },
+    "2024": {
+      "year": 2024,
+      "receipt_sha256": "8c16c0201ef6f028e84b4668356ff122dd42cd12d56b200413f7a62bafbe719b",
+      "data_sha256": "317a15de62c1bf099ee8d52a8ed6d115e0e5908ac3b5c6d3f61703c92d75b34e"
+    }
+  },
+  "age_domain": [15, 45],
+  "formula": "Y ~ A * splines::ns(age, knots = c(21, 27, 35), Boundary.knots = c(15, 45), intercept = FALSE) + year_factor + race_ethnicity + prepreg_diabetes + prior_living4 + education4 + splines::ns(bmi, knots = c(19.6, 26.1, 37.8), Boundary.knots = c(13, 69.9), intercept = FALSE) + prior_preterm + prior_cesarean + nativity",
+  "age_knots": [21, 27, 35],
+  "age_boundaries": [15, 45],
+  "no_imputation": true,
+  "iterations": 5,
+  "score_max": 5.6871272136049811e-09,
+  "code": [
+    {
+      "path": "age45_revision/R/01_measurement_helpers.R",
+      "sha256": "c1ee207dd0f84c962b82864c5d7aff4e90d9829f6b6fd6557e15f10e45862372",
+      "_row": "age45_revision/R/01_measurement_helpers.R"
+    },
+    {
+      "path": "age45_revision/R/03_natality_adapter.R",
+      "sha256": "a03ab6ea5ed0bb0744148f524842bbdc0fadb9b14439fb3eaa786b7b2622539e",
+      "_row": "age45_revision/R/03_natality_adapter.R"
+    },
+    {
+      "path": "age45_revision/R/08_linked_clinical_adapter.R",
+      "sha256": "ba433719a96b4b2d058c777bf6b39570d6a174f96af4bffa880fe606fd7aa07e",
+      "_row": "age45_revision/R/08_linked_clinical_adapter.R"
+    },
+    {
+      "path": "age45_revision/R/09_fetal_clinical_adapter.R",
+      "sha256": "272448dc915311f9b5868e8f8e54dbcab3adfb4a5d1aa475b8c9bd6ab321e47e",
+      "_row": "age45_revision/R/09_fetal_clinical_adapter.R"
+    },
+    {
+      "path": "age45_revision/R/10_model_specification.R",
+      "sha256": "44c9d8891b4d221979e360844a05b480536b5ffe239a54e8716a47c1b8789768",
+      "_row": "age45_revision/R/10_model_specification.R"
+    },
+    {
+      "path": "age45_revision/R/22_linked_mortality_preparation.R",
+      "sha256": "c4a35ea43aeb8794ad21b2e72ee0ec683602111e709dfb8ed9ebbcdc0b13ee34",
+      "_row": "age45_revision/R/22_linked_mortality_preparation.R"
+    },
+    {
+      "path": "age45_revision/R/24_pregnancy_endpoint_preparation.R",
+      "sha256": "3b32609598d54fb633f79ebb547c583471c578aa4614d13dee9887e3043a5778",
+      "_row": "age45_revision/R/24_pregnancy_endpoint_preparation.R"
+    },
+    {
+      "path": "age45_revision/R/fit_helpers.R",
+      "sha256": "cb34df6d3ab1d93486dbd4aabbd67d0ddda5fa44f9e03927ea6a009a74691552",
+      "_row": "age45_revision/R/fit_helpers.R"
+    },
+    {
+      "path": "age45_revision/scripts/03_fit_natality.R",
+      "sha256": "814e4baca2edcbcedf18828031004fcfb3741e63ab4d57af0972d046d7a773f6",
+      "_row": "age45_revision/scripts/03_fit_natality.R"
+    },
+    {
+      "path": "age45_revision/scripts/06_fit_adjunct_models.R",
+      "sha256": "fcf6d81e294b5d59f80ee263462ec4701039948f3c78aecd73c95de5ab43b56f",
+      "_row": "age45_revision/scripts/06_fit_adjunct_models.R"
+    },
+    {
+      "path": "R/04_standardization.R",
+      "sha256": "27c262490d26117a04a0a729a4dfd8a9db1395ba2cc61eff73c27447b079080a",
+      "_row": "R/04_standardization.R"
+    },
+    {
+      "path": "R/06_mi_pooling.R",
+      "sha256": "01fd41b5e1195fcf6e91d7629da7dd1c73d1958868d563072bdce2b6411afcf5",
+      "_row": "R/06_mi_pooling.R"
+    },
+    {
+      "path": "R/11_streaming_standardization.R",
+      "sha256": "b5152ff7216d2e019b0dafc64343a04e80b988c2df43daaf75a4f69a384fdcdb",
+      "_row": "R/11_streaming_standardization.R"
+    },
+    {
+      "path": "R/13_paired_source_comparison.R",
+      "sha256": "072ceda77764b7d8892d0008e46a4e10b6b99b44cd2a27f17e618e7f1fc7f818",
+      "_row": "R/13_paired_source_comparison.R"
+    },
+    {
+      "path": "R/15_overall_standardization.R",
+      "sha256": "8c4717a36e4deac8cb79a2bca87abc93330d63be54514e47d6cece0f3f809ea6",
+      "_row": "R/15_overall_standardization.R"
+    },
+    {
+      "path": "R/20_overall_paired.R",
+      "sha256": "071fd4097e24999f06cb0a3bd70f55ccd6027886e58268543f5da0e51cbd05e0",
+      "_row": "R/20_overall_paired.R"
+    },
+    {
+      "path": "R/26_age_crossover.R",
+      "sha256": "6ff2870bc56d0f522d2eb47c97197fe81ab1a2d4c4a6e49667052d9157d2b630",
+      "_row": "R/26_age_crossover.R"
+    },
+    {
+      "path": "age45_revision/scripts/14_large_cohort_refits.R",
+      "sha256": "9ca257a57f76eefc56b8f2fa9d1034a830bb0d1f21aaa91c992906f13c70bdbc",
+      "_row": "1"
+    }
+  ],
+  "numerical_identity_with_original_driver": null,
+  "elapsed_seconds": 737.8780300617218,
+  "outputs": [
+    {
+      "path": "age45_revision/outputs/models/prepregnancy_main/age_arm_support.csv",
+      "sha256": "e3cb89e4b75f6f2973d188a71e1c9efd0fa1e5ad1bd844d6a70d6191971dd5f0",
+      "_row": "age45_revision/outputs/models/prepregnancy_main/age_arm_support.csv"
+    },
+    {
+      "path": "age45_revision/outputs/models/prepregnancy_main/HC0_age_standardized.csv",
+      "sha256": "9447b2d0d2549ea29041b9331d2ef9509ac9a8a1c339f558cbb9f79e6811d60b",
+      "_row": "age45_revision/outputs/models/prepregnancy_main/HC0_age_standardized.csv"
+    },
+    {
+      "path": "age45_revision/outputs/models/prepregnancy_main/HC0_crossover.rds",
+      "sha256": "7938b91d8fdf72a0067fd5da2d4e39de84bf8cfe43b5a28847b55eb279f26d79",
+      "_row": "age45_revision/outputs/models/prepregnancy_main/HC0_crossover.rds"
+    },
+    {
+      "path": "age45_revision/outputs/models/prepregnancy_main/HC0_joint_standardization.rds",
+      "sha256": "7efdbc76ff471b795571c503f853b5c5d606c2a813732550084ba6fd0d93c7c4",
+      "_row": "age45_revision/outputs/models/prepregnancy_main/HC0_joint_standardization.rds"
+    },
+    {
+      "path": "age45_revision/outputs/models/prepregnancy_main/HC0_overall_standardized.csv",
+      "sha256": "d67ddd8af211df555d00567078aedf089496ab8246b1a104fc71d801b64d6534",
+      "_row": "age45_revision/outputs/models/prepregnancy_main/HC0_overall_standardized.csv"
+    },
+    {
+      "path": "age45_revision/outputs/models/prepregnancy_main/HC0_pointwise_null_age_set.csv",
+      "sha256": "64a729b001aba30a7a481ab4b5db480b0e828835767ec5dab15f8748d0eff0e9",
+      "_row": "age45_revision/outputs/models/prepregnancy_main/HC0_pointwise_null_age_set.csv"
+    },
+    {
+      "path": "age45_revision/outputs/models/prepregnancy_main/HC0_roots.csv",
+      "sha256": "af7af62bdc28e7fc18e1135eecde7505fe05931cf4674d862d7859abbb54f85a",
+      "_row": "age45_revision/outputs/models/prepregnancy_main/HC0_roots.csv"
+    },
+    {
+      "path": "age45_revision/outputs/models/prepregnancy_main/HC0_simultaneous_null_age_set.csv",
+      "sha256": "3083c2ad2b545ec2a061f3e539a9f8ba42b3588e003d24437a05c5d061df8aa3",
+      "_row": "age45_revision/outputs/models/prepregnancy_main/HC0_simultaneous_null_age_set.csv"
+    },
+    {
+      "path": "age45_revision/outputs/models/prepregnancy_main/model_age_standardized.csv",
+      "sha256": "4bedfd865438aa7d8d8b469a57fdf3c443b024855766fa72242b51c9a7774945",
+      "_row": "age45_revision/outputs/models/prepregnancy_main/model_age_standardized.csv"
+    },
+    {
+      "path": "age45_revision/outputs/models/prepregnancy_main/model_crossover.rds",
+      "sha256": "3cdc7bb69daa4f53bcfb09b9de68b6dd39fdd9e4003b9668da74faa48a13c511",
+      "_row": "age45_revision/outputs/models/prepregnancy_main/model_crossover.rds"
+    },
+    {
+      "path": "age45_revision/outputs/models/prepregnancy_main/model_joint_standardization.rds",
+      "sha256": "b236299175e4b7a6acd9688f4ecbda33980bdd9ee3e94ffc59b71ce782bec147",
+      "_row": "age45_revision/outputs/models/prepregnancy_main/model_joint_standardization.rds"
+    },
+    {
+      "path": "age45_revision/outputs/models/prepregnancy_main/model_overall_standardized.csv",
+      "sha256": "1edd6b338b5823b6b6e8f91790a8949639ec8b114e74fa10f7f6ed706731d8b6",
+      "_row": "age45_revision/outputs/models/prepregnancy_main/model_overall_standardized.csv"
+    },
+    {
+      "path": "age45_revision/outputs/models/prepregnancy_main/model_pointwise_null_age_set.csv",
+      "sha256": "fda1236da429bf4290b88b1d7f774df17e8d8d18960a8c8e78a11c081d3958f8",
+      "_row": "age45_revision/outputs/models/prepregnancy_main/model_pointwise_null_age_set.csv"
+    },
+    {
+      "path": "age45_revision/outputs/models/prepregnancy_main/model_roots.csv",
+      "sha256": "7480373d189809cb7cedf9cc993cf6db30b0be0084a5475118eeebd1d6f4b1da",
+      "_row": "age45_revision/outputs/models/prepregnancy_main/model_roots.csv"
+    },
+    {
+      "path": "age45_revision/outputs/models/prepregnancy_main/model_simultaneous_null_age_set.csv",
+      "sha256": "8c4e188a4ed0fe5bdd5a4580b17666614c1069ded027020a40af2f3b2591e37a",
+      "_row": "age45_revision/outputs/models/prepregnancy_main/model_simultaneous_null_age_set.csv"
+    },
+    {
+      "path": "age45_revision/outputs/models/prepregnancy_main/model.rds",
+      "sha256": "f5f32ee47cba1ba59daee8f64aa45229942a89e9c55c2d717248f44d3ab7af48",
+      "_row": "age45_revision/outputs/models/prepregnancy_main/model.rds"
+    },
+    {
+      "path": "age45_revision/outputs/models/prepregnancy_main/running.json",
+      "sha256": "97934d87c33195c0cfeb2e22d7eb939d80a17e8d4f635e95ed46dc1193941e4c",
+      "_row": "age45_revision/outputs/models/prepregnancy_main/running.json"
+    }
+  ]
+}

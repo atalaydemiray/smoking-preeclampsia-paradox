@@ -1,0 +1,9 @@
+Scenario,Replications,Fixed-null-age coverage (95% Monte Carlo CI),Whole-domain coverage under global null,Simultaneous reversal detected (95% Monte Carlo CI)
+global null,"1,000","93.8% (92.1%, 95.1%)","98.8% (97.9%, 99.3%)","0.0% (0.0%, 0.4%)"
+constant positive,"1,000",Not applicable,Not applicable,"0.0% (0.0%, 0.4%)"
+constant negative,"1,000",Not applicable,Not applicable,"0.0% (0.0%, 0.4%)"
+varying positive,"1,000",Not applicable,Not applicable,"0.0% (0.0%, 0.4%)"
+strong reversal,"1,000","96.5% (95.2%, 97.5%)",Not applicable,"27.5% (24.8%, 30.3%)"
+moderate reversal,"1,000","94.4% (92.8%, 95.7%)",Not applicable,"0.7% (0.3%, 1.4%)"
+weak reversal,"1,000","94.8% (93.2%, 96.0%)",Not applicable,"0.0% (0.0%, 0.4%)"
+near boundary reversal,"1,000","96.2% (94.8%, 97.2%)",Not applicable,"0.0% (0.0%, 0.4%)"

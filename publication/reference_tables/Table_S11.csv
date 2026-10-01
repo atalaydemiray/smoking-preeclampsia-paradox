@@ -1,0 +1,4 @@
+Comparison,Records / events,Exposed records,"Standardized risk per 1,000, reference / exposed",RR (95% CI),"RD per 1,000 (95% CI)",Crossover age (local 95% CI),Ages with lower | higher recorded risk for the exposed group supported (simultaneous 95% band)
+"SS vs SN, with the SN reference narrowed to women with no later positive report","1,958,898 / 167,206","1,480,543",89.4 / 83.7,"0.937 (0.927, 0.947)","-5.64 (-6.59, -4.70)","32.2 (31.3, 33.1)","(16.571, 30.785) | (34.404, 40.504)"
+"S vs N, with the N reference limited to zero in every recorded window","30,066,665 / 2,495,593","1,984,054",83.0 / 85.5,"1.031 (1.025, 1.036)","2.53 (2.11, 2.95)","28.6 (28.2, 28.9)","[15.000, 27.976) | (29.124, 45.000]"
+"SS vs NN, with the NN reference limited to zero in every recorded window","29,562,280 / 2,446,562","1,480,543",82.8 / 83.8,"1.012 (1.006, 1.018)","0.97 (0.49, 1.46)","29.4 (29.1, 29.7)","[15.000, 28.853) | (29.866, 45.000]"

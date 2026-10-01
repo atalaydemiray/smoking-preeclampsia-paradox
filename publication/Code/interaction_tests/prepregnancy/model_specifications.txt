@@ -1,0 +1,9 @@
+Full:
+Y ~ A * splines::ns(age, knots = c(21, 27, 35), Boundary.knots = c(15, 45), intercept = FALSE) + year_factor + race_ethnicity + prepreg_diabetes + prior_living4 + education4 + splines::ns(bmi, knots = c(19.6, 26.1, 37.8), Boundary.knots = c(13, 69.9), intercept = FALSE) + prior_preterm + prior_cesarean + nativity
+Reduced:
+Y ~ A + splines::ns(age, knots = c(21, 27, 35), Boundary.knots = c(15, 45), intercept = FALSE) + year_factor + race_ethnicity + prepreg_diabetes + prior_living4 + education4 + splines::ns(bmi, knots = c(19.6, 26.1, 37.8), Boundary.knots = c(13, 69.9), intercept = FALSE) + prior_preterm + prior_cesarean + nativity
+Removed coefficient columns:
+A:splines::ns(age, knots = c(21, 27, 35), Boundary.knots = c(15, 45), intercept = FALSE)1
+A:splines::ns(age, knots = c(21, 27, 35), Boundary.knots = c(15, 45), intercept = FALSE)2
+A:splines::ns(age, knots = c(21, 27, 35), Boundary.knots = c(15, 45), intercept = FALSE)3
+A:splines::ns(age, knots = c(21, 27, 35), Boundary.knots = c(15, 45), intercept = FALSE)4

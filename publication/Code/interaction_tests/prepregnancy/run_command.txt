@@ -1,0 +1,3 @@
+Rscript --vanilla age45_revision/scripts/40_interaction_revision.R prepregnancy
+Working directory: 01_Analysis
+No full model refitted; only the nested reduced model was newly fitted.

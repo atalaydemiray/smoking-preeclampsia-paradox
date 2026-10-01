@@ -1,0 +1,6 @@
+Specification,Fitted null age,"Change, years",Local 95% CI,Simultaneous opposite signs
+Original age spline,,,,
+"Two interior age knots (22,32)",,,,
+"Shifted age knots (23,29,36)",,,,
+"Four age knots (20,25,30,36)",,,,
+Original age spline plus age-by-BMI nuisance interaction,,,,

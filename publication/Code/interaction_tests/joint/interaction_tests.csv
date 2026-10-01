@@ -1,0 +1,6 @@
+population,hypothesis,test,n,events,full_parameters,reduced_parameters,statistic,df,p_value,log_p_value,p_display,p_numeric_underflow,full_log_likelihood,reduced_log_likelihood
+joint,All smoking-by-age spline interactions equal zero,Likelihood ratio (model based),30076524,2496317,43,35,2161.40678801574,8,0,-1061.53627402872,<0.001,TRUE,-8067323.1915903,-8068403.89498431
+joint,All smoking-by-age spline interactions equal zero,Omnibus Wald (HC0),30076524,2496317,43,35,2136.73006463068,8,0,-1049.23232818881,<0.001,TRUE,-8067323.1915903,-8068403.89498431
+joint,SN versus SS age-interaction coefficients equal zero,Contrast Wald (HC0; exploratory),30076524,2496317,43,35,198.401231583699,4,8.29068377920896e-42,-94.5934414575906,<0.001,FALSE,-8067323.1915903,-8068403.89498431
+joint,NN versus SS age-interaction coefficients equal zero,Contrast Wald (HC0; exploratory),30076524,2496317,43,35,2024.18846299341,4,0,-1005.17346697457,<0.001,TRUE,-8067323.1915903,-8068403.89498431
+joint,SN versus NN age-interaction coefficients equal zero,Contrast Wald (HC0; exploratory),30076524,2496317,43,35,147.178167231544,4,8.1911019030938e-31,-69.2770894514982,<0.001,FALSE,-8067323.1915903,-8068403.89498431

@@ -1,0 +1,274 @@
+{
+  "status": "complete_validated_interaction_revision",
+  "population": "joint",
+  "started": "2026-10-01 16:02:10.290963",
+  "finished": "2026-10-01 16:13:45.322183",
+  "elapsed_seconds": 695.03134202957153,
+  "self_sha256": "84eecd4ef73290c42639789b36b448462e4d3c04b117f1af1e95360e0c3e2d05",
+  "protocol_sha256": "7806b3e55d2caa962790cfffed2506d9bcf200ffc4ec7e26a6a47029b4646d0e",
+  "no_imputation": true,
+  "full_model_path": "age45_revision/outputs/supplementary/joint_3group/model.rds",
+  "full_model_sha256": "ddf987ef83a584228e0cee6787ec991be3a8e1f5eb72823156860aa981117d60",
+  "full_receipt_sha256": "65eb04df19d73a085bef43fa9d2f12359f0b1e7535a7ee46d6c0cc7fe230ca59",
+  "reconstructed_original_input_signature": "7be00dca8b740b5c942fa6049e8fde7d308ab6f4ea4ff691dd135e72f6ecd7d4",
+  "data_sha256": "d27fd10792714424cb6ada81ddbcd5151a00942d84debedfda63aefed55a00db",
+  "identity_sha256": "1782fa1222044ea959c6fa3cb825ab4f3177e2d42567a92e4597f8acb328462e",
+  "eligible_n": 31340713,
+  "fit_n": 30076524,
+  "events": 2496317,
+  "full_parameters": 43,
+  "reduced_parameters": 35,
+  "interaction_df": 8,
+  "full_fit_reused": true,
+  "full_record_likelihood_score_covariance_verified": true,
+  "validation_passed": true,
+  "code": [
+    {
+      "path": "age45_revision/R/01_measurement_helpers.R",
+      "sha256": "c1ee207dd0f84c962b82864c5d7aff4e90d9829f6b6fd6557e15f10e45862372",
+      "_row": "age45_revision/R/01_measurement_helpers.R"
+    },
+    {
+      "path": "age45_revision/R/03_natality_adapter.R",
+      "sha256": "a03ab6ea5ed0bb0744148f524842bbdc0fadb9b14439fb3eaa786b7b2622539e",
+      "_row": "age45_revision/R/03_natality_adapter.R"
+    },
+    {
+      "path": "age45_revision/R/08_linked_clinical_adapter.R",
+      "sha256": "ba433719a96b4b2d058c777bf6b39570d6a174f96af4bffa880fe606fd7aa07e",
+      "_row": "age45_revision/R/08_linked_clinical_adapter.R"
+    },
+    {
+      "path": "age45_revision/R/09_fetal_clinical_adapter.R",
+      "sha256": "272448dc915311f9b5868e8f8e54dbcab3adfb4a5d1aa475b8c9bd6ab321e47e",
+      "_row": "age45_revision/R/09_fetal_clinical_adapter.R"
+    },
+    {
+      "path": "age45_revision/R/10_model_specification.R",
+      "sha256": "44c9d8891b4d221979e360844a05b480536b5ffe239a54e8716a47c1b8789768",
+      "_row": "age45_revision/R/10_model_specification.R"
+    },
+    {
+      "path": "age45_revision/R/22_linked_mortality_preparation.R",
+      "sha256": "c4a35ea43aeb8794ad21b2e72ee0ec683602111e709dfb8ed9ebbcdc0b13ee34",
+      "_row": "age45_revision/R/22_linked_mortality_preparation.R"
+    },
+    {
+      "path": "age45_revision/R/24_pregnancy_endpoint_preparation.R",
+      "sha256": "3b32609598d54fb633f79ebb547c583471c578aa4614d13dee9887e3043a5778",
+      "_row": "age45_revision/R/24_pregnancy_endpoint_preparation.R"
+    },
+    {
+      "path": "age45_revision/R/fit_helpers.R",
+      "sha256": "cb34df6d3ab1d93486dbd4aabbd67d0ddda5fa44f9e03927ea6a009a74691552",
+      "_row": "age45_revision/R/fit_helpers.R"
+    },
+    {
+      "path": "age45_revision/scripts/03_fit_natality.R",
+      "sha256": "814e4baca2edcbcedf18828031004fcfb3741e63ab4d57af0972d046d7a773f6",
+      "_row": "age45_revision/scripts/03_fit_natality.R"
+    },
+    {
+      "path": "age45_revision/scripts/06_fit_adjunct_models.R",
+      "sha256": "fcf6d81e294b5d59f80ee263462ec4701039948f3c78aecd73c95de5ab43b56f",
+      "_row": "age45_revision/scripts/06_fit_adjunct_models.R"
+    },
+    {
+      "path": "R/04_standardization.R",
+      "sha256": "27c262490d26117a04a0a729a4dfd8a9db1395ba2cc61eff73c27447b079080a",
+      "_row": "R/04_standardization.R"
+    },
+    {
+      "path": "R/06_mi_pooling.R",
+      "sha256": "01fd41b5e1195fcf6e91d7629da7dd1c73d1958868d563072bdce2b6411afcf5",
+      "_row": "R/06_mi_pooling.R"
+    },
+    {
+      "path": "R/11_streaming_standardization.R",
+      "sha256": "b5152ff7216d2e019b0dafc64343a04e80b988c2df43daaf75a4f69a384fdcdb",
+      "_row": "R/11_streaming_standardization.R"
+    },
+    {
+      "path": "R/13_paired_source_comparison.R",
+      "sha256": "072ceda77764b7d8892d0008e46a4e10b6b99b44cd2a27f17e618e7f1fc7f818",
+      "_row": "R/13_paired_source_comparison.R"
+    },
+    {
+      "path": "R/15_overall_standardization.R",
+      "sha256": "8c4717a36e4deac8cb79a2bca87abc93330d63be54514e47d6cece0f3f809ea6",
+      "_row": "R/15_overall_standardization.R"
+    },
+    {
+      "path": "R/20_overall_paired.R",
+      "sha256": "071fd4097e24999f06cb0a3bd70f55ccd6027886e58268543f5da0e51cbd05e0",
+      "_row": "R/20_overall_paired.R"
+    },
+    {
+      "path": "R/26_age_crossover.R",
+      "sha256": "6ff2870bc56d0f522d2eb47c97197fe81ab1a2d4c4a6e49667052d9157d2b630",
+      "_row": "R/26_age_crossover.R"
+    },
+    {
+      "path": "age45_revision/scripts/40_interaction_revision.R",
+      "sha256": "84eecd4ef73290c42639789b36b448462e4d3c04b117f1af1e95360e0c3e2d05",
+      "_row": "age45_revision/scripts/40_interaction_revision.R"
+    },
+    {
+      "path": "age45_revision/protocol/INTERACTION_AMENDMENT_2026-10-01.md",
+      "sha256": "7806b3e55d2caa962790cfffed2506d9bcf200ffc4ec7e26a6a47029b4646d0e",
+      "_row": "age45_revision/protocol/INTERACTION_AMENDMENT_2026-10-01.md"
+    }
+  ],
+  "inputs": [
+    {
+      "year": 2016,
+      "path": "age45_revision/derived/supplementary_inputs/2016_prepregnancy_ext.rds",
+      "sha256": "f5a49a4c587f1572cb1b8a3455abab10d67cf10c8487520e2d2f58b51e313f9a",
+      "receipt_path": "age45_revision/derived/supplementary_inputs/2016_prepregnancy_ext_receipt.json",
+      "receipt_sha256": "b46c589f5e596fea8b099355f346b12a6e347cd0d8c607a78fa77698957bc26d"
+    },
+    {
+      "year": 2017,
+      "path": "age45_revision/derived/supplementary_inputs/2017_prepregnancy_ext.rds",
+      "sha256": "fb394047acf94baec949dcb0f0bd0b4ce64498eea31ecd1eb7207ff206be87d2",
+      "receipt_path": "age45_revision/derived/supplementary_inputs/2017_prepregnancy_ext_receipt.json",
+      "receipt_sha256": "7db1610cbcbb93d4f3cb7514f2b8bb88defe1359bc57c3dfb4d6c01761ea91ec"
+    },
+    {
+      "year": 2018,
+      "path": "age45_revision/derived/supplementary_inputs/2018_prepregnancy_ext.rds",
+      "sha256": "c461de6a07617440e2d679f06555b3d69ff1dd1328f1987b88339f4946e0b243",
+      "receipt_path": "age45_revision/derived/supplementary_inputs/2018_prepregnancy_ext_receipt.json",
+      "receipt_sha256": "6a64721e0620141c9ad098a8643d285d0857712dea1673f36624f41dc2cbd679"
+    },
+    {
+      "year": 2019,
+      "path": "age45_revision/derived/supplementary_inputs/2019_prepregnancy_ext.rds",
+      "sha256": "36ceaaae6566d6a7b89424ece95f8f55d50e04c385158cec069e8ecb67d0289d",
+      "receipt_path": "age45_revision/derived/supplementary_inputs/2019_prepregnancy_ext_receipt.json",
+      "receipt_sha256": "0ee2be1c3290b3a620e665b4a3627bd312334909e06ca31abea37f6ad4bdee0c"
+    },
+    {
+      "year": 2020,
+      "path": "age45_revision/derived/supplementary_inputs/2020_prepregnancy_ext.rds",
+      "sha256": "31165475d43a531152981b9187e41d0b7e16e3a208a9e8b649c08d98c83f281d",
+      "receipt_path": "age45_revision/derived/supplementary_inputs/2020_prepregnancy_ext_receipt.json",
+      "receipt_sha256": "77f58fd4bcc03d7184cf083fe08ea2927119fbc7bc6b77349fe2e0ca0a93da7d"
+    },
+    {
+      "year": 2021,
+      "path": "age45_revision/derived/supplementary_inputs/2021_prepregnancy_ext.rds",
+      "sha256": "1f33f4181cba57b6c1051457dfc9c2fb0234808227823e9705b998e9b34ac1e7",
+      "receipt_path": "age45_revision/derived/supplementary_inputs/2021_prepregnancy_ext_receipt.json",
+      "receipt_sha256": "78e1b9f00ecb25e3ff10717749fbf69daa97c6499cc8b1e79d5c2db022750c43"
+    },
+    {
+      "year": 2022,
+      "path": "age45_revision/derived/supplementary_inputs/2022_prepregnancy_ext.rds",
+      "sha256": "91ed9fa25f38e785901afd99024c1f343179ecf84d21aee38a601b680e481e94",
+      "receipt_path": "age45_revision/derived/supplementary_inputs/2022_prepregnancy_ext_receipt.json",
+      "receipt_sha256": "18ca294233d143e5026ea3ecbab06fe0a89772e413e481130c3248056e795d31"
+    },
+    {
+      "year": 2023,
+      "path": "age45_revision/derived/supplementary_inputs/2023_prepregnancy_ext.rds",
+      "sha256": "4233988790d8fa072963ea5a77ce0f6c1b07b4cb29015ce539bd28623e0e105e",
+      "receipt_path": "age45_revision/derived/supplementary_inputs/2023_prepregnancy_ext_receipt.json",
+      "receipt_sha256": "89e78a8b2edcfe0bcfbd99e99667892ccee79fb9a26407bf2d80edb2023e79de"
+    },
+    {
+      "year": 2024,
+      "path": "age45_revision/derived/supplementary_inputs/2024_prepregnancy_ext.rds",
+      "sha256": "f1385a191f25e65b86eaa3bb0608f3a87e429830042127e7f7e825aec432e324",
+      "receipt_path": "age45_revision/derived/supplementary_inputs/2024_prepregnancy_ext_receipt.json",
+      "receipt_sha256": "b55d8e768b5fef12b808044e316413f5789fab27588f89adc1d9dd6268c34161"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/annual_input_manifest.csv",
+      "sha256": "1f13f4d709b1d9be879cdfcb99d7aaaa84d086aa2f45fb173181f3dd5bb569da",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/annual_input_manifest.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/descriptive_categorical.csv",
+      "sha256": "87d8c2e5458175017112bd4463be238fa40a050aed8e6d011f65af996a23902a",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/descriptive_categorical.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/descriptive_continuous.csv",
+      "sha256": "52e46ecd350a081eec45fbe4a88448ea5dd6fb613ac2bc1416b0e6359a86facb",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/descriptive_continuous.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/group_counts.csv",
+      "sha256": "080fc27659e63c049e6d25a9b37efc75e0c7eb8f91851642c65d631c4d8ff77c",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/group_counts.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/interaction_tests.csv",
+      "sha256": "008e3368579e12c66173c961c17b6118f4e37a995407d34e5b0ddcdda8e70ab4",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/interaction_tests.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/missingness_by_year.csv",
+      "sha256": "ebfea69c1363a83dfc383cfa855cea243b3270cf3ae971e69575a4297d0444c4",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/missingness_by_year.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/missingness_overall.csv",
+      "sha256": "75d2c2918f8e9a90f513236f7bbc04428d059f162c3f1a28295146b223c8c719",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/missingness_overall.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/model_specifications.txt",
+      "sha256": "d72e539e240b346e48b04f0d0f57098f111782e8be46e5533dc3a6ffb4481e83",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/model_specifications.txt"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/population_by_year.csv",
+      "sha256": "1e98c4810df9b9dc80f009d5f2549d3f6ff282eb527f86923bfdb87b761ac43c",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/population_by_year.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/population_overall.csv",
+      "sha256": "5adebf552d567c50ae9d434c5451b138a136605088594b5602d18325cabc9312",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/population_overall.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/reduced_checkpoint.json",
+      "sha256": "fe20a79d62a82217cafae409f6c536162480f3185e89eb4d5345e32515ad7734",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/reduced_checkpoint.json"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/reduced_fit_trace.csv",
+      "sha256": "32bfca336639652a12ae79a3759cf008b6220187a413e65017d62ce9518e96dc",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/reduced_fit_trace.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/reduced_model.rds",
+      "sha256": "964f9d13763b163d0e853a91b6fe401e9b17a432ef7d8d41d03c539821598eeb",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/reduced_model.rds"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/run_command.txt",
+      "sha256": "fdcedb921dac23946d3f2ec3fd489bcaaf4ff4b60ccf43ef7b06498d900b4b8b",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/run_command.txt"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/sessionInfo.txt",
+      "sha256": "4d0b5c37dcec7b4056504ed7d2159bff9be4913e263dd8853a2c1043bc29a5c2",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/sessionInfo.txt"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/subset_validation_fits.rds",
+      "sha256": "c19b366f0cb5f3408230822743ea7e65348b42601e693078701b04e6468d4704",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/subset_validation_fits.rds"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/validation.csv",
+      "sha256": "47825ce0888c165a400dd12c2d20db3f898817a7a85c1b934e61f7b5b610a651",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/validation.csv"
+    }
+  ]
+}

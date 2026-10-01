@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "checked_at": "2026-10-01 16:25:26.146084",
+  "code": [
+    {
+      "path": "age45_revision/scripts/40_validate_interaction_release.R",
+      "sha256": "17cfccb7eeeaf12a538f8466bd1efa89ac18111508c447d46ae9f10a1a572cd7"
+    }
+  ],
+  "sha256_checks": 117,
+  "annual_inputs_reverified": 18,
+  "populations": {
+    "joint": {
+      "n": 30076524,
+      "events": 2496317,
+      "eligible_n": 31340713,
+      "df": 8,
+      "all_numerical_checks_passed": true,
+      "nested_design_check_n": 10000,
+      "nested_column_names_order_identical": true,
+      "nested_numeric_max_difference": 0
+    },
+    "prepregnancy": {
+      "n": 30097165,
+      "events": 2498098,
+      "eligible_n": 31362709,
+      "df": 4,
+      "all_numerical_checks_passed": true,
+      "nested_design_check_n": 10000,
+      "nested_column_names_order_identical": true,
+      "nested_numeric_max_difference": 0
+    }
+  },
+  "no_models_refitted": true,
+  "no_fit_outputs_modified": true
+}

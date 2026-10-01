@@ -1,0 +1,7 @@
+Global interaction hypotheses comprise 8 smoking-by-age spline coefficients in the joint SS/SN/NN model and 4 in the binary S/N model; exposure intercepts are not tested.
+LRT and HC0 omnibus Wald statistics address the same model-scale null. Holm adjustment is applied separately across the two global hypotheses for each inferential method; it does not combine LRT and Wald tests as independent evidence.
+The three contrast-specific HC0 Wald tests are exploratory; their additional Holm column addresses those three comparisons within the joint model.
+Saved p_value or holm_p_value can underflow numerically to zero. Use finite log_p_value/holm_log_p for computations and p_display/holm_p_display for publication; never report P=0.
+Interaction significance does not itself establish reversal or test a crossover age. Existing modelwise simultaneous sign inference and local crossover intervals answer separate questions and are not jointly adjusted across the three published contrasts.
+The paper's standardized risks, risk ratios, risk differences, and crossover ages are unchanged because the verified full models were reused. Only the nested reduced models are newly fitted.
+Missingness denominators are each model's exposure-eligible population before covariate complete-case selection. Unknown counts overlap across variables and must not be added.

@@ -1,110 +1,85 @@
-# Methods
+# Current analysis methods
 
-The operational definitions behind every estimate in `results/`. The manuscript states these in prose;
-this file states them in the form the code implements, so a reader can check one against the other.
+This specification describes the October 2026 joint-model presentation. The superseded
+three-pairwise-model presentation is not the current main analysis.
 
-## Population
+## Population and outcome
 
-United States natality public-use files, 2016 to 2024. A birth record is eligible when all of the
-following hold. Each is a recorded value, not an inference.
+US-resident singleton live births, maternal ages 15–45, known obstetric gestational age 20–47 weeks,
+recorded absence of chronic hypertension and known combined gestational hypertension/preeclampsia
+(GH/PE) status. Main years are 2016–2024, after national implementation of the revised certificate;
+2014–2015 are historical sensitivity years. Counts are births, not unique women.
 
-| Requirement | Rule |
-| --- | --- |
-| Residency | mother resident in the United States |
-| Plurality | singleton live birth |
-| Maternal age | 15 to 45 years |
-| Gestational age | obstetric estimate of 20 to 47 weeks, known |
-| Chronic hypertension | recorded absent, and not merely unreported |
-| Outcome | gestational hypertension or preeclampsia status known |
+GH/PE is a combined recorded checkbox, not adjudicated preeclampsia. Severity and onset are unavailable.
+Preterm birth is a comparison outcome, not a negative-control proof against bias.
 
-2014 and 2015 are analysed separately as a historical sensitivity analysis and are not part of the main
-period, because national adoption of the revised birth certificate was complete only in 2016.
+## Smoking definitions and reference groups
 
-The unit is a birth record, not a mother. Repeated pregnancies to the same woman cannot be linked in
-these files, so the records are not clustered.
+Source cigarette fields cover the three months before pregnancy and each trimester. Codes 00–97
+are counts, 98 is a positive top code, and 99 is unknown. Reporting flags are respected.
+The primary joint model contains SS (smoking in both early periods), SN (before pregnancy but none
+reported in the first trimester), and NN (none in either period). **SS is the reporting reference.**
+The secondary model compares no prepregnancy smoking (N) with prepregnancy smoking (S), regardless
+of the first trimester. **S is its reference.** Both models use complete cases without investigator
+imputation. Source-edited fields may contain agency editing or imputation.
 
-## Outcome
+Later-trimester reports do not define main-model groups. Third-trimester exposure is not clinically
+defined for births before 28 weeks, although the raw field may contain reported values. Later-report
+sensitivity definitions can introduce gestational-duration selection and do not quantify bias.
+The first-trimester-only sensitivity ignores the value of prepregnancy smoking but still requires
+that field to be known in its prepared input.
 
-Gestational hypertension or preeclampsia, written GH/PE, is the combined birth-certificate checkbox. It
-is not clinically adjudicated preeclampsia, and it carries no onset date and no severity. The control
-outcome used to test specificity is preterm birth, an obstetric estimate below 37 weeks, on the same
-records.
+## Models and standardized effects
 
-## Exposure
+The binary logistic joint model has a three-level smoking predictor and smoking-by-age spline
+interactions. NN is the coding baseline, but contrasts are re-expressed against SS for reporting.
+Other covariate coefficients are shared across the three groups. The secondary model has a binary
+prepregnancy predictor with an age interaction. Natural cubic spline interior knots are 21, 27 and
+35 years for age (boundaries 15,45), and 19.6,26.1,37.8 for BMI (boundaries 13,69.9).
 
-Four cigarette fields are recorded: average cigarettes per day in the three months before pregnancy
-(P) and in each trimester (T1, T2, T3). Values 00 to 97 are stated counts, 98 is a positive top code
-meaning 98 or more, and 99 is unknown. A recorded value is not used when its reporting flag says the
-item was not supported that year.
+Covariates are year, recorded race/ethnicity, BMI, education, prepregnancy diabetes, prior living
+children, prior preterm birth, prior cesarean delivery and nativity. The separate within-group
+SS-versus-SN sensitivity also adjusts for prepregnancy dose and estimates covariate coefficients
+within that population. Its 31.8-year crossover is distinct from the joint-model 33.3-year estimate.
 
-**The exposure rule.** A group whose association with GH/PE is estimated is defined only by the P and
-T1 fields. GH/PE begins at or after 20 weeks, the third-trimester field does not exist for a birth
-before 28 weeks, and GH/PE shortens gestation, so the later fields both follow the outcome and depend
-on how long the pregnancy lasted. They are used in three ways only: to narrow a reference group, with a
-missing value counted as not positive so that no group requires the pregnancy to reach a given week; to
-remove inconsistent records; or in analyses whose stated purpose is to show the bias the later fields
-introduce.
+At each age, probabilities for every comparison group are averaged over the same empirical covariate
+distribution for that model and age. Overall estimates use that model's full complete-case reference.
+Risks and risk differences are expressed per 1,000; risk ratios are unitless. HC0 covariance is
+primary and model-based covariance is a sensitivity. Uncertainty conditions on the empirical
+reference and assumes independent records; repeated pregnancies cannot be clustered by mother.
 
-The three comparisons, written as the required pattern of P/T1/T2/T3 where `+` is smoking, `-` is zero
-cigarettes and `any` is unrestricted:
+## Formal interaction tests added in October
 
-| Comparison | Exposed | Reference | Population |
-| --- | --- | --- | --- |
-| 1 | `+/+/any/any` | `+/-/any/any` | women who smoked before pregnancy with known T1 |
-| 2 | `+/+/any/any` | `-/-/any/any` | P and T1 both known |
-| 3 | `+/any/any/any` | `-/any/any/any` | P known |
+Two reduced logistic models omit only the smoking-by-age terms while retaining all main effects,
+covariates, factor levels, spline bases and complete-case records. Likelihood-ratio statistics use
+twice the maximized log-likelihood difference; verified rank differences are 8 and 4. Joint HC0
+Wald tests examine the same coefficient blocks. Holm adjustment covers the two global hypotheses
+separately for each test method. Three exploratory primary-model contrast Wald tests form a
+separate Holm family. Log-tail probabilities are retained when ordinary probabilities underflow.
 
-A zero report does not identify a woman who has never smoked, and a zero first-trimester report does
-not establish that she stopped for good.
+These additions followed coauthor review after the main findings were available, as stated in the
+dated protocol amendments. They test conditional log-odds interaction, not directly constancy of
+standardized RRs/RDs and not reversal by themselves.
 
-## Model
+## Crossovers and sensitivity analyses
 
-A logistic probability model for the recorded outcome:
+For the age-only smoking interactions, the zero of the conditional contrast also gives standardized
+RR=1 and RD=0. Local intervals use the implicit delta method and assume a regular root. Coefficient-
+ellipsoid simultaneous bands test support for opposite directions across age within each contrast;
+coverage is not simultaneous across all three contrasts. Table S19 retains complete pointwise
+null-age confidence sets, including boundary uncertainty that is not another fitted crossover.
 
-    logit Pr(Y = 1 | A, age, X) = g(age, X) + A h(age)
+Additional smoking-by-BMI/year models use integer-age standardized contrasts and model-specific
+Bonferroni intervals; their sign brackets are not continuous-root intervals. Other retained
+sensitivities address age bases, covariate sets, periods, exposure definitions, dose, race/ethnicity,
+fetal-death inclusion and observed linked infant death. The populations overlap and are not
+independent replications. Mortality analyses do not eliminate live-birth selection or recover early
+losses. Withdrawn quantitative-bias scenarios are excluded from the current publication driver.
 
-with `A` the binary smoking contrast and `h` a natural cubic spline, so smoking interacts with age and
-with nothing else. Age spline: interior knots 21, 27 and 35, boundaries 15 and 45. Prepregnancy body
-mass index spline: interior knots 19.6, 26.1 and 37.8, boundaries 13 and 69.9. The knots were taken
-from empirical quantiles without using outcome status and are then held fixed, so the reported
-uncertainty does not include knot selection.
+## Reproduction boundary
 
-Adjustment: year, maternal race and ethnicity as a recorded social variable, prepregnancy diabetes,
-prior living children, education, prior preterm birth, prior cesarean delivery, and nativity. The
-comparison-1 model additionally adjusts for prepregnancy cigarettes per day.
-
-Complete cases for each model's own covariates. No imputation, by an explicit recorded decision.
-
-## Standardization
-
-At each integer age from 15 to 45, predicted probabilities under both smoking categories are averaged
-over the complete-case covariate distribution at that age. Overall estimates average over the whole
-complete-case population. Reported quantities are standardized risks, risk ratios and risk differences
-per 1,000 records. HC0 sandwich covariance is primary; model-based covariance is a sensitivity
-analysis. Both condition on the empirical reference distribution and assume independent records.
-
-## Crossover age
-
-Because the logistic link is increasing and `h` has no covariate interaction, the sign of the
-within-covariate risk contrast is the sign of `h(age)`. The standardized risk ratio therefore crosses
-one exactly where `h(age) = 0`, and that root is the crossover age.
-
-The root is found by exact polynomial root isolation on each piece of the spline, not by searching
-integer ages. Its local 95% confidence interval is the implicit delta interval, the root plus or minus
-1.96 times `sqrt(b(a)' V b(a)) / |h'(a)|` evaluated at the root with HC0 covariance. That interval
-assumes an isolated root with non-zero slope. It is not a confidence set for every null age and it does
-not establish that the root is unique.
-
-Whether the direction genuinely reverses is a separate question, answered by a simultaneous confidence
-band built from the coefficient ellipsoid with the critical value from the chi-square distribution on
-the smoking spline dimension. Ages where that band lies entirely below one and ages where it lies
-entirely above one are the ages at which a lower and a higher recorded risk are supported. A band that
-touches the null is not an additional crossover.
-
-## What the estimates are
-
-Associations in recorded data. Birth-certificate records cannot separate a biological mechanism from
-differences in smoking history, in which pregnancies reach a registered birth, or in how the outcome is
-recorded. The bias analyses in `results/bias/` state what each of those would have to do to produce the
-observed pattern; they are fixed-assumption calculations, not corrections, and they do not exclude a
-smaller true association combined with ordinary pregnancy loss.
+`run_all.R` reconstructs publication displays from aggregate results. `model-fitting/run_current.R`
+runs the statistical plan in an isolated workspace with verified prepared records. Original import
+and preprocessing code is retained, but the source-only route also needs historical reconciliation
+inputs and source dictionaries. The October extension and aggregate rebuild were executed; an
+independent end-to-end raw-download rerun is not claimed.

@@ -1,0 +1,65 @@
+group,level,n,variable,percent
+N,2016,3212919,year_factor,11.4285430737281
+S,2016,338011,year_factor,17.0363810662411
+N,2017,3165461,year_factor,11.2597321584225
+S,2017,313689,year_factor,15.8105071736959
+N,2018,3136158,year_factor,11.1554996528132
+S,2018,289079,year_factor,14.5701175472039
+N,2019,3116117,year_factor,11.0842126294738
+S,2019,260125,year_factor,13.1107822670149
+N,2020,3034025,year_factor,10.7922065259871
+S,2020,229543,year_factor,11.5693927685436
+N,2021,3103959,year_factor,11.0409659037735
+S,2021,192003,year_factor,9.67730717006694
+N,2022,3133126,year_factor,11.1447146493321
+S,2022,149204,year_factor,7.52015822150002
+N,2023,3086689,year_factor,10.9795354914652
+S,2023,118439,year_factor,5.96954518375004
+N,2024,3124657,year_factor,11.1145899150044
+S,2024,93961,year_factor,4.73580860198362
+N,Non-Hispanic White,14117533,race_ethnicity,50.2169005771009
+N,Non-Hispanic Asian,1888653,race_ethnicity,6.7180505209829
+N,Non-Hispanic AIAN,184384,race_ethnicity,0.655864802724964
+N,Non-Hispanic multiple race,618733,race_ethnicity,2.20086990728276
+S,Non-Hispanic White,1484156,race_ethnicity,74.8042139982077
+N,Hispanic,7335147,race_ethnicity,26.0915520875651
+S,Hispanic,149399,race_ethnicity,7.52998658302647
+N,Non-Hispanic Black,3897169,race_ethnicity,13.8624608283302
+S,Non-Hispanic AIAN,36188,race_ethnicity,1.82394229189327
+S,Non-Hispanic multiple race,77297,race_ethnicity,3.89591210723095
+N,Non-Hispanic NHOPI,71492,race_ethnicity,0.254301276013174
+S,Non-Hispanic NHOPI,3167,race_ethnicity,0.159622671560351
+S,Non-Hispanic Asian,12688,race_ethnicity,0.639498723321039
+S,Non-Hispanic Black,221159,race_ethnicity,11.1468236247602
+N,No,27866277,prepreg_diabetes,99.1219968505087
+S,No,1963954,prepreg_diabetes,98.9869227349659
+N,Yes,246834,prepreg_diabetes,0.878003149491353
+S,Yes,20100,prepreg_diabetes,1.01307726503412
+N,3 or more,3239850,prior_living4,11.5243382349253
+N,0,11248972,prior_living4,40.0132592938576
+N,2,4602747,prior_living4,16.3722435414565
+N,1,9021542,prior_living4,32.0901589297606
+S,0,651631,prior_living4,32.8434105120123
+S,3 or more,361760,prior_living4,18.2333746964548
+S,1,574766,prior_living4,28.9692720057015
+S,2,395897,prior_living4,19.9539427858314
+N,Bachelor or higher,10260338,education4,36.4966296330563
+N,Less than high school,3184011,education4,11.3257156065012
+N,Some college or associate,7624923,education4,27.1223024730347
+N,High school or GED,7043839,education4,25.0553522874078
+S,High school or GED,842314,education4,42.4541872348232
+S,Bachelor or higher,102963,education4,5.18952609152775
+S,Some college or associate,613641,education4,30.9286440792438
+S,Less than high school,425136,education4,21.4276425944052
+N,No,27206005,prior_preterm,96.7733702612991
+N,Yes,907106,prior_preterm,3.22662973870092
+S,No,1861203,prior_preterm,93.8080818364823
+S,Yes,122851,prior_preterm,6.19191816351773
+N,No,23894547,prior_cesarean,84.9943181314939
+N,Yes,4218564,prior_cesarean,15.0056818685061
+S,No,1641145,prior_cesarean,82.716750652956
+S,Yes,342909,prior_cesarean,17.283249347044
+N,Born elsewhere including territories,6761019,nativity,24.0493448057029
+N,Born in 50 US states,21352092,nativity,75.9506551942971
+S,Born in 50 US states,1926044,nativity,97.076188450516
+S,Born elsewhere including territories,58010,nativity,2.92381154948404

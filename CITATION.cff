@@ -4,14 +4,15 @@ title: "smoking-preeclampsia-paradox: analysis code and aggregate results for 'R
 type: software
 license: MIT
 repository-code: "https://github.com/atalaydemiray/smoking-preeclampsia-paradox"
-version: "1.0.0"
-date-released: "2026-09-12"
+version: "1.1.0-dev"
 authors:
   - family-names: Demiray
     given-names: Atalay
     affiliation: "Department of Health Policy and Management, Yale School of Public Health"
   - family-names: Erden
     given-names: Murat
+  - family-names: Kalafat
+    given-names: Erkan
   - family-names: Skolnick
     given-names: Sarah
   - family-names: Tam
@@ -25,9 +26,10 @@ preferred-citation:
       given-names: Atalay
     - family-names: Erden
       given-names: Murat
+    - family-names: Kalafat
+      given-names: Erkan
     - family-names: Skolnick
       given-names: Sarah
     - family-names: Tam
       given-names: Jamie
   year: 2026
-  journal: "Submitted"

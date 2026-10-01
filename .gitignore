@@ -17,6 +17,32 @@ Thumbs.db
 ~$*
 .ipynb_checkpoints/
 
-# What run_all.R writes. Generated in about a minute, so it is not committed; the reference is
-# results/exhibit_checksums.csv, which scripts/check_outputs_match.R verifies the rebuild against.
+# Generated publication outputs. Current reference tables are under
+# publication/reference_tables/; run_all.R and tests/check_publication.R validate them.
 output/
+
+# Local assistant configuration is not part of the research release.
+.claude/
+.codex/
+__pycache__/
+*.pyc
+
+# Record-level reruns must stay outside the repository. Fail-safe exclusions.
+derived/
+library/
+*.rds
+*.rda
+*.RData
+*.parquet
+*.feather
+
+# Local backups and superseded publication tooling are not public release inputs.
+archive/
+_maintainer/
+*.docx
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.zip
+*.tar.gz

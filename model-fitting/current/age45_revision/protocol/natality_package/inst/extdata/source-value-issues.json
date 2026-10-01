@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "issues": [
+    {
+      "id": "race-unlisted-codes-2015",
+      "year": 2015,
+      "fields": [
+        "MRACE31",
+        "MRACE6",
+        "MRACE15"
+      ],
+      "codes": {
+        "MRACE31": [
+          "99"
+        ],
+        "MRACE6": [
+          "9"
+        ],
+        "MRACE15": [
+          "99"
+        ]
+      },
+      "occurrence_records": 2923,
+      "source_archive_sha256": "b2de4b43a836f2ffafdf6a49c08204d0da836f8887d92a9e0fd88fc24ba4ec00",
+      "guide_pages": [
+        8,
+        9
+      ],
+      "status": "unresolved source-value meanings",
+      "note": "The complete 2015 U.S. source contains 2,923 occurrence records with MRACE31=99, MRACE6=9 and MRACE15=99 together. These codes are absent from the corresponding annual layout entries. Their meanings are not established here; they are preserved literally without race-category labels or automatic missing-value conversion. All other nonblank MRACE6/MRACE15 pairs follow the documented aggregation. This is a source-data observation, not a harmonization decision."
+    }
+  ]
+}

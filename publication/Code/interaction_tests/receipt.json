@@ -1,0 +1,53 @@
+{
+  "status": "complete_validated_interaction_collection",
+  "generated": "2026-10-01 16:25:16.448498",
+  "code": [
+    {
+      "path": "age45_revision/scripts/40_collect_interactions.R",
+      "sha256": "a1cc4b017593bf44e411cecbffe966c04a464a03d1e3c2649910dae341b99602"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/joint/receipt.json",
+      "sha256": "e92118e841ca6aef094858cd8910fdca6b8d821f332356424562dd1978b42f4f"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/prepregnancy/receipt.json",
+      "sha256": "2b2d421bc7ee5eeeffe47f7850031ad6909121a01b6422449db2a5f9a44ae049"
+    }
+  ],
+  "reporting_clarification": [
+    {
+      "path": "age45_revision/protocol/INTERACTION_AMENDMENT_2026-10-01_REPORTING_CLARIFICATION.md",
+      "sha256": "765de6de25371ba4518f02049cea50ecb31868c452263a38cc7e523ffb548ad6"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/interaction_tests.csv",
+      "sha256": "8f3a8c5ec00ded5f12d0867b6f108c6e800545e08942efb666e2ae4613c0e5de",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/interaction_tests.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/global_interaction_tests.csv",
+      "sha256": "01ac4e12799725e320b109ecc9624b45c8dcea71248a6d93cb73e0aee67380dc",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/global_interaction_tests.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/missingness_overall.csv",
+      "sha256": "06178ba379a50b5ea53ab553eb6af2d2d267e837555b6d29d4d944709b0e4380",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/missingness_overall.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/population_overall.csv",
+      "sha256": "8c9a2650ec2d8082bac0075cb262fb9ff3cc4cf2c59e4a96cc69e6319bd887d6",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/population_overall.csv"
+    },
+    {
+      "path": "age45_revision/outputs/supplementary/interaction_revision_20261001/INTERPRETATION_AND_MULTIPLICITY.txt",
+      "sha256": "ea847e60024e422b5036063f9dac299ffddbb226a39f22f8043e0998504d47a3",
+      "_row": "age45_revision/outputs/supplementary/interaction_revision_20261001/INTERPRETATION_AND_MULTIPLICITY.txt"
+    }
+  ]
+}

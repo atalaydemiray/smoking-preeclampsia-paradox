@@ -1,0 +1,3 @@
+population,hypothesis,test,n,events,full_parameters,reduced_parameters,statistic,df,p_value,log_p_value,p_display,p_numeric_underflow,full_log_likelihood,reduced_log_likelihood
+prepregnancy,All smoking-by-age spline interactions equal zero,Likelihood ratio (model based),30097165,2498098,38,34,1901.18011895567,4,0,-943.731925145576,<0.001,TRUE,-8073343.39087147,-8074293.98093095
+prepregnancy,All smoking-by-age spline interactions equal zero,Omnibus Wald (HC0),30097165,2498098,38,34,1881.96350783551,4,0,-934.133768012879,<0.001,TRUE,-8073343.39087147,-8074293.98093095
