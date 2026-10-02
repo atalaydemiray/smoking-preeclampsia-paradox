@@ -6,8 +6,8 @@
   removed the Python runtime requirement and updated CI and validation commands.
 - Added fail-closed synthetic fixtures for manifest paths, file sizes/types, symlinks, text encoding
   and recognized secret patterns, alongside the retained source-tampering checks.
-- Clarified NCHS/NBER data access and the bundled development natality reader's role in imports;
-  added a research-use example covering annual codebooks, verified cache reads and provenance.
+- Clarified NCHS/NBER data access and the frozen import dependency.
+- Removed general package tutorials and showcase wording; documentation focuses on study reproduction.
 - Reworked the README and supporting documentation for external researchers.
 - Consolidated validation and analysis-scope guidance; removed redundant handoff documents.
 - Simplified the RStudio project settings and removed unused table-writing helpers.

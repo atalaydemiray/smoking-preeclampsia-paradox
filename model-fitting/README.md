@@ -48,9 +48,10 @@ receipts retain the actual session/version information from each fit.
 ## Starting from public source archives
 
 `source_files.csv` records the historical NCHS download inventory. Original import/preparation
-engines are included under `current/`, including the frozen natality package source at
-`current/age45_revision/protocol/natality_package/` and its configuration files. The frozen natality
-0.4.0.9003 source includes its licence, reader metadata and tests. Install it explicitly if needed:
+engines are included under `current/`. Natality imports require the bundled `natality` reader
+0.4.0.9003; prepared-data fitting and aggregate reconstruction do not. Install the dependencies
+listed in [DESCRIPTION](current/age45_revision/protocol/natality_package/DESCRIPTION) first,
+then install the source from the repository root:
 
 ```sh
 R CMD INSTALL model-fitting/current/age45_revision/protocol/natality_package

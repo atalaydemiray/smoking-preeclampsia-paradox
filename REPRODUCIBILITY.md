@@ -18,7 +18,7 @@ The layout follows The Turing Way's principles for
 | --- | --- | --- |
 | Public reconstruction | `Rscript --vanilla run_all.R` | Rebuilds 27 table CSVs and six vector PDFs from shipped aggregate estimates, and checks every table cell. |
 | Prepared-data refit | `model-fitting/run_current.R` | An explicit 53-step serial plan for authorized local records and receipts. Dry run is the default. |
-| Source import | Source adapters and bundled natality reader | Requires annual dictionaries and historical reconciliation inputs in addition to raw archives. Standalone raw-download reproduction has not been verified. |
+| Source import | Source adapters and frozen import reader | Requires annual dictionaries and historical reconciliation inputs in addition to raw archives. Standalone raw-download reproduction has not been verified. |
 
 The default command installs nothing, downloads nothing and performs no record-level fitting.
 Run from the repository root, or in R use `reproduce_publication(repository="/path/to/clone",
@@ -46,8 +46,8 @@ Prepared-data estimation originally used:
 | `data.table` | 1.18.4 |
 | `jsonlite` | 2.0.0 |
 | `digest` | 0.6.39 |
-| `natality` | Bundled source 0.4.0.9003, with its own DESCRIPTION/license; needed for imports, not aggregate reconstruction. |
-| `arrow` | Import/cache dependency of the bundled natality reader; see its DESCRIPTION for requirements. |
+| `natality` | 0.4.0.9003 (bundled); source import only. |
+| `arrow` | Parquet import/cache dependency; see the import reader's DESCRIPTION for requirements. |
 | `pdftotext` | External prerequisite for annual linked-source guide extraction; document the actual version in an import run. |
 
 The original fitting session is recorded in `publication/Code/interaction_tests/joint/sessionInfo.txt`
@@ -74,10 +74,9 @@ Main analysis years are 2016–2024; 2014–2015 supply historical sensitivity i
 linked birth/infant-death sources supply additional source-specific sensitivities, not recovery
 of unobserved early losses. Natality archive/manual URLs and converted-artifact hashes are recorded in
 `model-fitting/current/age45_revision/protocol/natality_package/inst/extdata/data-manifest.json`.
-The study importer reads verified local artifacts through the bundled development reader
-0.4.0.9003 with downloads disabled. That source snapshot is supplied here, so imports do not require
-a CRAN release or access to the evolving package repository. Its availability does not remove
-the preparation prerequisites below. Fetal/linked archive/manual URLs are in `model-fitting/source_files.csv`;
+The importer reads verified local artifacts with downloads disabled. Its prerequisites and
+installation are documented in `model-fitting/README.md`.
+Fetal/linked archive/manual URLs are in `model-fitting/source_files.csv`;
 linked filenames include both period and cohort years, so the filename year is not automatically
 the birth-cohort year.
 

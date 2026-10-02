@@ -6,8 +6,6 @@ Analysis code and aggregate results for *Reframing the smoking-preeclampsia para
 reversal in 30.1 million United States birth records*. The study examines how the association
 between maternal smoking and recorded gestational hypertension/preeclampsia varies with maternal age.
 The main analysis uses United States natality records for 2016–2024 at maternal ages 15–45 years.
-This study is an applied research example of the [natality R package](#example-use-of-the-natality-package),
-used to inspect annual definitions and import source-preserving birth records for study-specific analysis.
 The repository follows The Turing Way's [research-compendium principles](https://book.the-turing-way.org/reproducible-research/compendia/):
 separate inputs, methods and outputs, with a documented computational environment.
 
@@ -93,7 +91,7 @@ are described in [METHODS.md](METHODS.md).
 
 ## Data access
 
-The data provider is **NCHS**; the `natality` R package is an access/reader tool, not the data source.
+The source records are **NCHS public-use vital statistics data**.
 No record-level download is needed to rebuild the supplied tables and figures.
 
 For record-level work, obtain the annual **U.S. public-use files and their user guides** from the
@@ -104,69 +102,15 @@ sensitivity analysis. Fetal-death files for 2018–2024 and linked files named `
 through `2024PE2023CO.zip` support supplementary analyses. Period and birth-cohort years differ;
 they must not be treated interchangeably.
 
-The study's natality importer uses `natality::read_natality(..., download = FALSE)` to read verified
-local annual artifacts. The **exact development reader, version 0.4.0.9003, is bundled** in
-[model-fitting/current/age45_revision/protocol/natality_package/](model-fitting/current/age45_revision/protocol/natality_package/README.md).
-It can be installed from that source without a CRAN release or access to a separate development
-repository. Use this frozen version for reproduction, not a changing latest package version.
-The importer and a package-parity check are in
-[01_package_natality.R](model-fitting/current/age45_revision/scripts/01_package_natality.R) and
-[15_package_update_parity.R](model-fitting/current/age45_revision/scripts/15_package_update_parity.R).
-Fetal and linked sources use separate adapters, not this natality reader.
-
-The bundled [annual data manifest](model-fitting/current/age45_revision/protocol/natality_package/inst/extdata/data-manifest.json)
+The [annual data manifest](model-fitting/current/age45_revision/protocol/natality_package/inst/extdata/data-manifest.json)
 records official natality archive/guide URLs, converted-artifact endpoints and checksums;
 [model-fitting/source_files.csv](model-fitting/source_files.csv) records fetal and linked archives
 and manuals. Public raw downloads alone are not the prepared inputs needed by the fitting runner.
-See [model-fitting/README.md](model-fitting/README.md) for installation and preparation limitations,
+Natality imports use the bundled `natality` reader, version 0.4.0.9003; it is not needed for
+aggregate reconstruction or fitting models from prepared inputs. See
+[model-fitting/README.md](model-fitting/README.md) for import prerequisites and installation,
 [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for environments and provenance, and
 [DATA_DICTIONARY.md](DATA_DICTIONARY.md) for the supplied aggregate schemas.
-
-## Example use of the natality package
-
-The package handles annual metadata, selected-column reads, verified caching and import provenance.
-Study-specific R adapters then apply reporting flags, eligibility rules and clinical coding;
-separate analysis scripts fit the models. This repository demonstrates that division of work.
-The exact study reader is supplied here, so the example does not depend on a CRAN release
-or access to a separate package-development repository.
-
-Install the bundled version from the research repository root:
-
-```sh
-R CMD INSTALL model-fitting/current/age45_revision/protocol/natality_package
-```
-
-Install its dependencies separately first: `digest` and `jsonlite` for the reader and metadata;
-Parquet reads additionally need `arrow` and `tidyselect`. This installation is not needed for
-`run_all.R`. Inspect the smoking and hypertension definitions before reading records:
-
-```r
-library(natality)
-stopifnot(as.character(packageVersion("natality")) == "0.4.0.9003")
-
-natality_codebook("CIG_0", years = 2016:2024)
-natality_codebook("RF_GHYPE", years = 2016:2024)
-natality_changes("CIG_0", years = 2016:2024)
-```
-
-After obtaining the matching annual Parquet artifact identified in the bundled data manifest,
-import it into the verified cache and read selected source fields without a network request:
-
-```r
-natality_cache_import(2024, "/path/to/natality_2024_source_v1.parquet")
-births <- read_natality(
-  2024,
-  vars = c("MAGER", "CIG_0", "CIG_1", "RF_GHYPE", "RF_PHYPE", "DPLURAL"),
-  population = "all_occurrence",
-  download = FALSE
-)
-attr(births, "natality_provenance")
-```
-
-This selected-field example is not a cohort definition or model fit. The actual importer linked
-above also reads reporting flags, covariates and editing indicators. Cache import verifies the
-artifact's size and SHA256; it does not accept an arbitrary renamed file or a raw NCHS ZIP archive.
-Package codebook availability does not by itself establish cross-year clinical comparability.
 
 ## Repository map
 
@@ -204,8 +148,8 @@ using the instructions in [CONTRIBUTING.md](CONTRIBUTING.md).
 ## Software and citation
 
 The analysis used R 4.6.0; aggregate reconstruction needs no add-on R packages. Record-level fitting
-requires `data.table`, `jsonlite`, and `digest`; imports additionally use the frozen natality reader
-and its dependencies. No driver installs packages or downloads data automatically.
+requires `data.table`, `jsonlite`, and `digest`. Import dependencies are listed in
+[model-fitting/README.md](model-fitting/README.md). No driver installs packages or downloads data automatically.
 
 The code has an MIT licence. NCHS source data remain governed by their source terms.
 See [CITATION.cff](CITATION.cff) for citation metadata and [CHANGELOG.md](CHANGELOG.md) for changes.

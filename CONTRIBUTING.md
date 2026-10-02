@@ -3,8 +3,8 @@
 Report code or documentation problems through the repository's GitHub Issues. Include the
 commit/version, command, operating system, R version, expected behavior and a minimal synthetic
 example. Do not upload individual birth records, private correspondence, credentials or local
-workspace files. Report sensitive material privately to the maintainer using the contact in
-the bundled natality package DESCRIPTION rather than posting it in an issue.
+workspace files. Report sensitive material privately to
+[Atalay Demiray](mailto:atalay.demiray@yale.edu) rather than posting it in an issue.
 
 Before proposing a change, read README.md, METHODS.md and REPRODUCIBILITY.md. Preserve raw inputs,
 approved reference outputs and the frozen source files identified in publication/source_manifest.csv.
