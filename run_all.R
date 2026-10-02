@@ -37,7 +37,7 @@ publication_file_manifest <- function(paths, root) {
              md5 = unname(tools::md5sum(paths)), stringsAsFactors = FALSE)
 }
 
-reproduce_publication <- function(output = "output/2026-10-02", repository = getwd()) {
+reproduce_publication <- function(output = "output/reproduction", repository = getwd()) {
   repository <- normalizePath(repository, winslash = "/", mustWork = TRUE)
   if (!file.exists(file.path(repository, "publication/source_manifest.csv"))) {
     stop("Repository inputs are missing. Supply the directory containing run_all.R as repository=.")
@@ -49,7 +49,7 @@ reproduce_publication <- function(output = "output/2026-10-02", repository = get
   source("R/tables_october.R", local = TRUE)
 
   # Record reconstruction code/aggregate inputs, never external birth records.
-  inputs <- c("run_all.R", "tests/check_publication.R", list.files(
+  inputs <- c("run_all.R", "METHODS.md", "DATA_DICTIONARY.md", "tests/check_publication.R", list.files(
     c("R", "publication", "results"), recursive = TRUE, full.names = TRUE, all.files = TRUE))
   inputs <- inputs[!dir.exists(inputs)]
   input_manifest <- publication_file_manifest(file.path(repository, inputs), repository)
@@ -69,7 +69,7 @@ reproduce_publication <- function(output = "output/2026-10-02", repository = get
                   actual[cell[1], cell[2]], " != ", expected[cell[1], cell[2]])
         }
       }
-      stop("Reconstructed table differs from the approved reference: ", name)
+      stop("Reconstructed table differs from the publication reference: ", name)
     }
     write.table(actual, file.path(destination, "tables", paste0(name, ".csv")),
                 sep = ",", row.names = FALSE, col.names = FALSE, qmethod = "double", na = "")
@@ -91,15 +91,15 @@ reproduce_publication <- function(output = "output/2026-10-02", repository = get
   status <- if (nzchar(git) && file.exists(".git"))
     system2(git, c("status", "--porcelain"), stdout = TRUE) else "not checked without Git metadata"
   receipt <- data.frame(
-    field = c("status", "mode", "manuscript_snapshot", "code_commit", "working_tree",
+    field = c("status", "mode", "analysis_specification", "code_commit", "working_tree",
               "started_utc", "finished_utc", "elapsed_seconds", "tables", "figures", "estimation_rerun"),
-    value = c("passed", "public aggregate reconstruction", "2026-10-01 plus approved Table 3 revision",
+    value = c("passed", "public aggregate reconstruction", "METHODS.md",
               commit, if (!length(status)) "clean" else paste(status, collapse = "; "),
               format(started, tz = "UTC", usetz = TRUE), format(Sys.time(), tz = "UTC", usetz = TRUE),
               format(as.numeric(difftime(Sys.time(), started, units = "secs")), digits = 7),
               length(tables), "6", "no"), stringsAsFactors = FALSE)
   write.csv(receipt, file.path(destination, "run_receipt.csv"), row.names = FALSE)
-  writeLines(c("27 table files and 6 figures rebuilt from approved aggregates.",
+  writeLines(c("27 table files and 6 figures rebuilt from packaged aggregate estimates.",
                "Table cells match the reference files; this is not record-level estimation.",
                capture.output(sessionInfo())), file.path(destination, "session_info.txt"))
   generated <- list.files(destination, recursive = TRUE, full.names = TRUE)
@@ -111,5 +111,5 @@ reproduce_publication <- function(output = "output/2026-10-02", repository = get
 
 if (sys.nframe() == 0L) {
   arguments <- commandArgs(trailingOnly = TRUE)
-  reproduce_publication(if (length(arguments)) arguments[1] else "output/2026-10-02")
+  reproduce_publication(if (length(arguments)) arguments[1] else "output/reproduction")
 }

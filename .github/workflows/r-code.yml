@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   reproduce:
-    name: October aggregate reconstruction and source checks
+    name: Aggregate reconstruction and source checks
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

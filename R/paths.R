@@ -18,19 +18,8 @@ project_root <- function() {
 #           can be rebuilt without the source data files.
 res_path <- function(...) file.path(project_root(), "results", ...)
 
-# output/   holds what this repository rebuilds: the tables and figures of the manuscript.
-out_path <- function(...) file.path(project_root(), "output", ...)
-
 read_result <- function(...) {
   path <- res_path(...)
   if (!file.exists(path)) stop("missing result file: ", sub(project_root(), "", path, fixed = TRUE))
   utils::read.csv(path, check.names = FALSE, stringsAsFactors = FALSE)
-}
-
-write_table_csv <- function(rows, name) {
-  dir.create(out_path("tables"), recursive = TRUE, showWarnings = FALSE)
-  path <- out_path("tables", paste0(name, ".csv"))
-  utils::write.table(as.data.frame(rows, stringsAsFactors = FALSE), path,
-                     sep = ",", row.names = FALSE, col.names = FALSE, qmethod = "double", na = "")
-  invisible(path)
 }

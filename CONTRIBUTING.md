@@ -21,6 +21,5 @@ inference requires a written scientific amendment and the study owner's agreemen
 Record what was original, previous and corrected, why it changed, and which validations were rerun.
 Sensitivity models on overlapping births are not independent replication.
 
-OpenAI Codex assisted code development, debugging and this repository audit. Executed code and
-verification records are the computational evidence, not an AI assurance. Final scientific review,
-authorship, licenses, manuscript disclosures and release approval remain the authors' responsibility.
+OpenAI Codex supported code development and debugging. The authors are responsible for reviewing
+the code, validating the results and maintaining the research record.

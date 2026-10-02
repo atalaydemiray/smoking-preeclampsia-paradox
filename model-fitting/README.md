@@ -1,8 +1,7 @@
-# Rerun the current statistical analysis
+# Rerun the statistical analysis
 
 Use `run_current.R` from the repository root. It preserves original source paths so the model
-receipts continue to identify the exact code and inputs. Duplicate September drivers have been
-removed; `run_current.R` is the record-level entry point.
+receipts continue to identify the exact code and inputs. `run_current.R` is the record-level entry point.
 
 ## Prepared-data route in RStudio
 
@@ -23,10 +22,9 @@ The destination must be outside this Git repository. The helper copies the curre
 only prepared inputs, and creates new output folders. Input links are read-only **by convention**,
 not protected by filesystem permissions. Do not run import/preparation writers in that workspace.
 Model scripts validate input receipts and hashes before fitting. A failed command stops later
-steps. Each large fit runs in a fresh R process, sequentially. No imputation or withdrawn
-quantitative-bias scenario is scheduled.
+steps. Each large fit runs in a fresh R process, sequentially. No imputation is scheduled.
 
-The plan includes the earlier sensitivity fits, the joint model, secondary model, exact contrast
+The plan includes sensitivity fits, the joint model, secondary model, exact contrast
 inversions, group descriptions, two reduced-model interaction fits, collector, and final input/
 model/output validator. The redundant pairwise fits remain internal prerequisites for numerical
 checks, not duplicate publication rows. Known-truth simulation evidence is retained from the
@@ -60,24 +58,24 @@ R CMD INSTALL model-fitting/current/age45_revision/protocol/natality_package
 
 Imports additionally require the natality package cache, `arrow`, annual source dictionaries,
 fetal/linked source gates, and earlier decoded/provenance inputs used for exact age-15–44 parity
-checks. The historical import driver intentionally stops if these are unavailable. A public raw
-archive download alone does **not** supply all these prerequisites; clean-room raw-source
-reproduction without that preparation workspace is not certified. Retained import scripts document
+checks. The import driver stops if these are unavailable. A public raw
+archive download alone does **not** supply all these prerequisites; standalone raw-source
+reproduction has not been verified. Import scripts document
 the original construction; they are not scheduled by the prepared-input fitting runner.
 
 The original fitting versions were R 4.6.0, `data.table` 1.18.4, `jsonlite` 2.0.0 and `digest` 0.6.39.
-The broader historical environment lock was removed because it included unused dependencies.
 `R/06_mi_pooling.R` remains byte-identical solely because the frozen complete-case numerical engines
 use its covariance validator and pin that source file. No imputation or pooling analysis is run.
 
 ## Verification and scope
 
-The October national interaction tests passed full-record likelihood/score/covariance checks and
+The national interaction tests passed full-record likelihood/score/covariance checks and
 independent 120,000-record `glm` comparisons. Their aggregate receipts are in
 `../publication/Code/interaction_tests/`. Existing result receipts refer to the original research
 workspace, not to record-level files distributed here.
 
 The repository's aggregate reconstruction, source-integrity checks and preflight are tested.
-The full 53-step refit is available for an intentional local rerun but was not executed again
-while updating this repository. It writes new statistical results in the isolated workspace;
-`../run_all.R` always reconstructs the frozen October publication, not unreviewed new fits.
+The 53-step plan writes statistical results in the isolated workspace. In contrast,
+`../run_all.R` reconstructs the publication exhibits from the packaged estimates; it does not
+automatically consume new fits. A successful aggregate reconstruction is not validation of a
+record-level rerun.

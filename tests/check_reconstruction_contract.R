@@ -2,6 +2,7 @@
 before <- list.files("output", recursive = TRUE, all.files = TRUE)
 source("run_all.R")
 source("R/tables_october.R")
+stopifnot(identical(formals(reproduce_publication)$output, "output/reproduction"))
 stopifnot(identical(before, list.files("output", recursive = TRUE, all.files = TRUE)))
 must_fail <- function(expr) stopifnot(inherits(try(force(expr), silent = TRUE), "try-error"))
 root <- normalizePath(getwd(), winslash = "/")

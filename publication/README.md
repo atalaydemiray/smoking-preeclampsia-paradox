@@ -1,4 +1,4 @@
-# October publication evidence
+# Publication inputs
 
 `Code/supplementary/aggregate_outputs/joint_three_group/` contains full-precision joint-model
 summaries, age curves and group support. In `summary_main_summary.csv`, the `events` column for
@@ -11,11 +11,11 @@ Raw P values can underflow to zero; use the finite log-P and formatted P columns
 
 `Code/table_inputs/` contains outcome-stratified descriptive aggregates, covariance-estimator
 comparisons and the non-numerical exposure-definition table. `Code/aggregate_inputs/` and
-`../results/` supply unchanged sensitivity results. `Code/publication_code/` and
-`Code/reproduce_figures.R` are the six-figure October renderer.
+`../results/` supply sensitivity results. `Code/publication_code/` and
+`Code/reproduce_figures.R` generate the six publication figures.
 
 `layouts/` contains headings and row labels only. It does not provide numerical result cells.
-`reference_tables/` holds the 27 approved CSV tables and is read only after reconstruction to
+`reference_tables/` holds the 27 reference CSV tables and is read only after reconstruction to
 compare outputs. Table S15 is a definition table, not a statistical calculation. The table
 metadata CSV supplies every title and note.
 

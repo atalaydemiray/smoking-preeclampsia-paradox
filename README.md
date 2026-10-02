@@ -2,20 +2,29 @@
 
 [![Publication reconstruction](https://github.com/atalaydemiray/smoking-preeclampsia-paradox/actions/workflows/r-code.yml/badge.svg)](https://github.com/atalaydemiray/smoking-preeclampsia-paradox/actions/workflows/r-code.yml)
 
-Code and aggregate evidence for *Reframing the smoking-preeclampsia paradox: an age-related reversal
-in 30.1 million United States birth records*. This working-tree revision matches the **1 October
-2026** manuscript package, including the approved expanded Table 3. The 2 October
-repository audit changes reconstruction safeguards and documentation, not fitted estimates.
+Analysis code and aggregate results for *Reframing the smoking-preeclampsia paradox: an age-related
+reversal in 30.1 million United States birth records*. The study examines how the association
+between maternal smoking and recorded gestational hypertension/preeclampsia varies with maternal age.
+The main analysis uses United States natality records for 2016–2024 at maternal ages 15–45 years.
+The repository follows The Turing Way's [research-compendium principles](https://book.the-turing-way.org/reproducible-research/compendia/):
+separate inputs, methods and outputs, with a documented computational environment.
 
 ## Reconstruct the publication tables and figures
 
-From this repository's root:
+Requirements: R 4.6.0 with its base/recommended packages. No additional R packages or source-data
+downloads are needed for aggregate reconstruction. Git is needed to clone the repository; Python 3
+is needed only for the separate integrity checks.
+
+Download the repository, or clone it and run the reconstruction:
 
 ```sh
+git clone https://github.com/atalaydemiray/smoking-preeclampsia-paradox.git
+cd smoking-preeclampsia-paradox
 Rscript --vanilla run_all.R
 ```
 
-Or open the `.Rproj` in RStudio:
+Alternatively, open [smoking-preeclampsia-paradox.Rproj](smoking-preeclampsia-paradox.Rproj) in
+RStudio. The project starts without restoring a saved workspace:
 
 ```r
 source("run_all.R")             # sourcing starts nothing
@@ -24,11 +33,11 @@ reproduce_publication()
 
 This uses only base/recommended R packages. It reconstructs **27 CSV table files** (3 main tables
 and 19 numbered supplementary tables with lettered parts) and **6 vector PDF figures** from
-packaged aggregate results. It compares every table cell with the October reference tables,
+packaged aggregate results. It compares every table cell with the publication reference tables,
 independently checks the likelihood-ratio statistics, log-scale probabilities and Holm adjustment,
 and verifies contrast inversions, ages 15–45, and denominators. Table titles and notes are exported too.
 
-Outputs are in `output/2026-10-02/`. A nonempty output directory is never deleted or overwritten;
+Outputs are in `output/reproduction/`. A nonempty output directory is never deleted or overwritten;
 choose another directory for another run:
 
 ```sh
@@ -36,9 +45,8 @@ Rscript --vanilla run_all.R output/my_check
 python3 tests/check_source_integrity.py
 ```
 
-**This is publication reconstruction, not a new fit of 30 million records.** The CI badge covers
-aggregate reconstruction and code/source checks, not raw-data reproduction or scientific validity.
-Visual approval of the manuscript figures remains an author task.
+This command rebuilds publication exhibits from existing estimates; it does not refit the models.
+The CI badge covers aggregate reconstruction and code/source checks, not record-level estimation.
 
 Every successful run also writes its environment, Git status when available, input fingerprints,
 output checksums and a completion receipt. Within the repository, generated files can be written
@@ -47,17 +55,16 @@ directory, supply `repository=` explicitly to `reproduce_publication()`.
 
 ## Rerun the statistical analysis
 
-The current R code includes the joint three-group model, secondary prepregnancy model, retained
-sensitivity analyses, and the new interaction tests. See [model-fitting/README.md](model-fitting/README.md)
+The R code includes the joint three-group model, secondary prepregnancy model, sensitivity analyses,
+and interaction tests. See [model-fitting/README.md](model-fitting/README.md)
 for the isolated RStudio rerun, prerequisites, and dry-run plan. Large fits run sequentially.
 
 The prepared-data refit route requires the record-level inputs and their provenance receipts.
-Raw NCHS archives alone are not enough for the historical reconciliation steps. The import and
-preparation source is retained, but a clean raw-download-to-all-results run without the research
-workspace is **not certified**. No individual birth records, fitted record-level objects, manuscript
-files, or credentials are included in the current source/aggregate bundle.
+Raw NCHS archives alone do not supply these prepared inputs. Import and preparation code is included,
+but standalone reproduction from raw downloads has not been verified. Individual birth records
+and fitted record-level objects are not distributed.
 
-## Current analysis
+## Study models and results
 
 The primary model includes 30,076,524 complete-case births in three groups:
 
@@ -68,42 +75,60 @@ The primary model includes 30,076,524 complete-case births in three groups:
 The secondary model includes 30,097,165 births and compares **N** (none before pregnancy) with
 **S** (smoking before pregnancy), irrespective of first-trimester status. These populations overlap.
 
-| Current comparison | Adjusted RR (95% CI) | Crossover age (local 95% CI) |
+| Comparison | Adjusted RR (95% CI) | Crossover age (local 95% CI) |
 |---|---|---|
 | SN vs SS | 1.063 (1.052–1.074) | 33.3 (32.1–34.5) |
 | NN vs SS | 0.988 (0.983–0.994) | 29.4 (29.1–29.7) |
 | N vs S | 0.970 (0.966–0.975) | 28.6 (28.2–28.9) |
 
-The new global age-by-smoking likelihood-ratio statistics are 2161.41 on 8 df and 1901.18 on 4 df;
+The global age-by-smoking likelihood-ratio statistics are 2161.41 on 8 df and 1901.18 on 4 df;
 both Holm-adjusted P<.001, with concordant HC0 Wald tests. These tests assess interaction on the
 conditional log-odds scale; standardized risks, RRs/RDs and simultaneous sign bands describe the
-age-dependent reversal. The October tests did not change the full-model estimates.
+age-dependent reversal.
 
-The 31.8-year crossover in earlier material belongs to a separate within-group sensitivity fit,
-not the current joint primary model. No investigator imputation was used. See [METHODS.md](METHODS.md).
+No investigator imputation was used. Model definitions, adjustment, standardization and inference
+are described in [METHODS.md](METHODS.md).
+
+## Data access
+
+Record-level data are available from the [NCHS vital statistics portal](https://www.cdc.gov/nchs/data_access/vitalstatsonline.htm)
+and the [NBER natality catalogue](https://www.nber.org/research/data/vital-statistics-natality-birth-data).
+Fetal-death and linked birth/infant-death sources support supplementary analyses.
+[REPRODUCIBILITY.md](REPRODUCIBILITY.md) documents annual sources, preparation requirements and
+computational environments; [DATA_DICTIONARY.md](DATA_DICTIONARY.md) defines the supplied aggregates.
 
 ## Repository map
 
 | Path | Purpose |
 |---|---|
-| `run_all.R`, `R/tables_october.R` | Current aggregate table/figure reconstruction |
-| `publication/Code/` | Current joint-model, descriptive, interaction and figure inputs/code |
+| `run_all.R`, `R/tables_october.R` | Aggregate table/figure reconstruction |
+| `publication/Code/` | Joint-model, descriptive, interaction and figure inputs/code |
 | `publication/layouts/` | Headings and row labels only, not estimate inputs |
-| `publication/reference_tables/` | Approved tables, read only as regression-test expectations |
+| `publication/reference_tables/` | Publication-display reference tables for regression tests |
 | `publication/source_manifest.csv` | SHA256 provenance for imported sources and evidence |
 | `model-fitting/run_current.R` | Safe workspace preparation, preflight and 53-step serial fitting plan |
-| `model-fitting/current/` | Frozen original-path R engines and current analysis extensions |
-| `results/` | Only the retained sensitivity aggregates used by the current tables |
+| `model-fitting/current/` | Statistical engines, source adapters and analysis scripts |
+| `results/` | Supplementary aggregate estimates |
 | `tests/` | Independent aggregate, source-integrity and runner checks |
-| `REPRODUCIBILITY.md` | Environment, data access, result map, audit scope and Zenodo release checklist |
+| `REPRODUCIBILITY.md` | Environment, data access, exhibit map and reproducibility scope |
 | `DATA_DICTIONARY.md` | Aggregate schemas, keys, effect scales and missing-value conventions |
 | `CONTRIBUTING.md` | Reporting errors, changing code and reviewing scientific amendments |
-| `RUN_LOG.md` | Dated commands, comparisons, actual verification and remaining limits |
 
-The public tree excludes duplicate September pipelines, old publication builders, withdrawn
-quantitative-bias outputs, unused imputation engines, manuscript drafts and local working files.
-Retained sensitivity analyses and their validation remain available, regardless of statistical
-significance. See [PUBLICATION_SCOPE.md](PUBLICATION_SCOPE.md) for the inclusion rules.
+Supplementary estimates and validation diagnostics are included regardless of statistical
+significance. Dated analysis amendments document methodological changes and distinguish analyses
+developed after the initial findings from preregistered analyses.
+
+## Validation and support
+
+The reconstruction stops if a table differs from its reference or a numerical check fails.
+Successful runs write `run_receipt.csv`, `session_info.txt`, `reconstruction_inputs.csv` and
+`output_manifest.csv`. See [tests/README.md](tests/README.md) for source-integrity, safety and
+synthetic tests. GitHub Actions reports these checks for each tested commit.
+
+If the destination already contains results, choose a new output directory. For missing prepared
+inputs during model fitting, follow [model-fitting/README.md](model-fitting/README.md); they are not
+needed for aggregate reconstruction. Report problems through [GitHub Issues](https://github.com/atalaydemiray/smoking-preeclampsia-paradox/issues)
+using the instructions in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Software and citation
 
@@ -111,7 +136,6 @@ The analysis used R 4.6.0; aggregate reconstruction needs no add-on R packages. 
 requires `data.table`, `jsonlite`, and `digest`; imports additionally use the frozen natality reader
 and its dependencies. No driver installs packages or downloads data automatically.
 
-The code has an MIT licence. NCHS source data remain governed by their source terms. `CITATION.cff`
-records software/manuscript metadata; no accepted publication, new release DOI or submission status
-is asserted by this code update. [CHANGELOG.md](CHANGELOG.md) records the October changes.
-See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) before creating a versioned Zenodo deposit.
+The code has an MIT licence. NCHS source data remain governed by their source terms.
+See [CITATION.cff](CITATION.cff) for citation metadata and [CHANGELOG.md](CHANGELOG.md) for changes.
+For reproducibility, cite the archived release corresponding to the results you use.

@@ -19,9 +19,8 @@ Current main joint-model estimates and formal interaction tests are in `../publi
 
 `risk0` and `risk1` are standardized probabilities, `rr` is their ratio and `rd` their difference.
 Columns ending `_per1000` use the per-1,000 scale. `HC0` denotes sandwich covariance and `model`
-denotes model-based covariance. The old `primary`, `broad` and `prepregnancy` identifiers describe
+denotes model-based covariance. The `primary`, `broad` and `prepregnancy` identifiers describe
 specific pairwise sensitivities; use the current table labels and `METHODS.md` when interpreting them.
 
-Unused descriptive copies, obsolete display checksums, duplicate curves and withdrawn bias-scenario
-outputs have been removed. `run_all.R` verifies every reconstructed table against the October
-reference files under `publication/reference_tables/`.
+`run_all.R` verifies every reconstructed table against the reference files under
+`publication/reference_tables/`.

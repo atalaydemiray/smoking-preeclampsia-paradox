@@ -1,17 +1,16 @@
-# Reproduction scope and release guide
+# Reproducibility
 
-This repository is a research compendium for the October 2026 manuscript. It separates executable
-methods (`R/`, `model-fitting/`), approved aggregate inputs (`publication/Code/`, `results/`),
+This repository separates executable
+methods (`R/`, `model-fitting/`), aggregate inputs (`publication/Code/`, `results/`),
 reference displays (`publication/reference_tables/`) and generated outputs (`output/`). The frozen
 statistical sources are retained at their original relative paths because fitted-result receipts
-pin their hashes. A cosmetic migration to another folder tree would obscure that provenance.
+pin their hashes.
 
-The layout and audit follow The Turing Way's principles for
+The layout follows The Turing Way's principles for
 [research compendia](https://book.the-turing-way.org/reproducible-research/compendia/),
 [project documentation](https://book.the-turing-way.org/reproducible-research/code-documentation/code-documentation-project/),
 [testing](https://book.the-turing-way.org/reproducible-research/testing/testing-checklist/) and
 [computational environments](https://book.the-turing-way.org/reproducible-research/renv/renv-resources/).
-Guidance was adapted for this clinical observational study; no institutional certification is implied.
 
 ## Supported modes
 
@@ -19,7 +18,7 @@ Guidance was adapted for this clinical observational study; no institutional cer
 | --- | --- | --- |
 | Public reconstruction | `Rscript --vanilla run_all.R` | Rebuilds 27 table CSVs and six vector PDFs from shipped aggregate estimates, and checks every table cell. |
 | Prepared-data refit | `model-fitting/run_current.R` | An explicit 53-step serial plan for authorized local records and receipts. Dry run is the default. |
-| Historical source import | Frozen source adapters and natality reader | Documents original preparation, but also needs historical dictionaries/reconciliation inputs. Not a certified standalone raw-download pipeline. |
+| Source import | Source adapters and bundled natality reader | Requires annual dictionaries and historical reconciliation inputs in addition to raw archives. Standalone raw-download reproduction has not been verified. |
 
 The default command installs nothing, downloads nothing and performs no record-level fitting.
 Run from the repository root, or in R use `reproduce_publication(repository="/path/to/clone",
@@ -28,14 +27,15 @@ Input/reference files are read-only by workflow convention; path guards prevent 
 from writing generated results into source directories. A successful run records input/output
 fingerprints, session information, code commit when available, dirty status and a completion receipt.
 MD5 output fingerprints identify local artifacts; `publication/source_manifest.csv` supplies
-the separately validated SHA256 hashes of imported evidence. Neither is a privacy certification.
+the SHA256 hashes of imported sources. METHODS.md and DATA_DICTIONARY.md are also fingerprinted
+to identify the analysis specification accompanying each reconstruction.
 
 ## Computational environment
 
 Public reconstruction requires R 4.6.0 and its base/recommended packages only. No additional R
 package is required. Source/safety checks require Python 3 (standard library) and Git. The GitHub
-workflow pins R 4.6.0 on Ubuntu; its latest successful remote run must be checked for the actual
-release commit, not inferred from a local pass or an older badge.
+workflow pins R 4.6.0 on Ubuntu. Workflow results and run receipts identify the commit and
+environment used for a particular reconstruction.
 
 Prepared-data estimation originally used:
 
@@ -46,21 +46,21 @@ Prepared-data estimation originally used:
 | `jsonlite` | 2.0.0 |
 | `digest` | 0.6.39 |
 | `natality` | Bundled source 0.4.0.9003, with its own DESCRIPTION/license; needed for imports, not aggregate reconstruction. |
-| `arrow` | Import/cache prerequisite; the audit machine has 25.0.1. Import environment restoration was not tested in this revision. |
+| `arrow` | Import/cache dependency of the bundled natality reader; see its DESCRIPTION for requirements. |
 | `pdftotext` | External prerequisite for annual linked-source guide extraction; document the actual version in an import run. |
 
 The original fitting session is recorded in `publication/Code/interaction_tests/joint/sessionInfo.txt`
 and its secondary counterpart: arm64 macOS, default BLAS, LAPACK 3.12.1, C.UTF-8 locale and
 Europe/Amsterdam timezone. Each actual refit records its own environment; installing the listed
 versions does not guarantee numerical identity across BLAS/OS combinations. No complete dependency
-restore or container build was executed in this audit. This is a precise environment specification,
+restore or container build has been verified. This is an environment specification,
 not a tested lockfile restoration claim.
 
 The aggregate reconstruction is deterministic and uses no random sampling. Retained synthetic
 coverage evidence uses eight scenarios and 1,000 attempts per scenario with explicit seed families
 in `model-fitting/current/scripts/64_crossover_coverage_validation.R`; its historical simulation
-domain is 15–44, not the amended clinical fitted domain 15–45. It was not rerun for this release.
-That diagnostic distinction does not exclude age 45 from the clinical analysis. The October
+domain is 15–44, whereas the clinical fitted domain is 15–45.
+That diagnostic distinction does not exclude age 45 from the clinical analysis. The
 interaction validation uses a deterministic subset; the full fitting plan is serial. See source
 scripts for individual synthetic-test seeds and numerical tolerances.
 
@@ -84,8 +84,6 @@ reporting-area gates and source-specific eligibility belong to preparation, not 
 Retain provider citation and terms when obtaining or redistributing source records. The repository's
 existing MIT license covers its software and associated documentation; it does not relicense NCHS
 records or third-party reference guides. The bundled natality source retains its own MIT notices.
-No licensing or visibility change was made by the audit. The source library and coauthor correspondence
-are not copied into the public release. Final author ownership/reuse approval is a release requirement.
 See DATA_DICTIONARY.md for schemas, missingness and effect units.
 
 ## Exhibit and in-text result map
@@ -132,33 +130,24 @@ reference tables are comparison expectations. Main Table 3 is intentionally a se
 component with an explanatory note; Table S19 is the complete set. Table S5 retains less precise
 and inconclusive sensitivities, not only significant results.
 
-## Release checks and evidence
+## Analysis provenance and validation
 
-The 2 October audit checked the candidate release tree, locally reachable history (330 blobs),
-and the historical compressed natality-package source (27 text files, no record-level binaries).
-It inventoried 1,850 entries in the local guidance library and read the harmonized guidance and
-relevant Turing Way chapters; that is not a claim to have read every archived book/course/example.
-Local assistant worktrees and generated output are ignored and remain outside Git release contents.
-The report and pre-change archive are kept in the research workspace, not duplicated here.
+Dated amendments under `model-fitting/current/age45_revision/protocol/` document changes to
+the study methods. Supplementary analyses and interaction tests were developed after the initial
+findings; they are not represented as preregistered analyses. Supplementary estimates are retained
+regardless of statistical significance. Multipurpose source files contain branches that are not
+scheduled by the fitting plan and are not reported analyses.
 
-Use `tests/README.md` for commands and scope. The original 24 national interaction numerical checks
-and their tolerances remain unchanged. A new test covers Table 3 selection, complete S19 retention,
-reference directions, endpoint inclusion, protected output paths and overwrite/symlink guards.
-Record current execution results in generated receipts; do not treat this documentation as proof
-that a future commit has passed. Full refitting, all raw-source preparation and user-led visual
-inspection remain separate tasks. No biological or causal interpretation is certified by a green test.
+See [tests/README.md](tests/README.md) for checks and commands. The national interaction results
+include 24 numerical validation checks with declared tolerances. Reconstruction tests cover
+confidence-set selection, reference directions, endpoints, source integrity and protected outputs.
+Generated receipts record the environment, inputs, output hashes and completion status of each run.
+GitHub Actions checks aggregate reconstruction and synthetic behavior, not full record-level fitting
+or scientific validity.
 
-## Before Zenodo
+## Citation and archived versions
 
-1. Review the complete diff and author/citation/license information. Choose the final version;
-   `CITATION.cff` currently says `1.1.0-dev`, not a published release. No DOI is invented here.
-2. Commit and push the approved change, then verify the GitHub workflow for that exact commit.
-3. Reconstruct in a clean checkout/export, check table cells, data/labels/intervals in all figures,
-   and preserve the environment/input/output receipts with the archived version.
-4. Create a new versioned GitHub release/Zenodo deposit only with author authorization. Do not
-   archive the older `v1.0-ajog-submission` tag as if it were the current October analysis.
-5. Verify the archived files, version-specific DOI and metadata. Link that exact version in the
-   manuscript/code-availability statement; distinguish a version DOI from a concept DOI.
-
-The audit prepares local changes. It does not publish a release, modify visibility, rewrite history,
-reserve a DOI, or claim the full 53-step record-level plan was rerun.
+Use [CITATION.cff](CITATION.cff) for citation metadata and [CHANGELOG.md](CHANGELOG.md) for changes.
+For a manuscript or a reproduction study, cite the version-specific DOI of the archived release
+corresponding to the code and results used. A concept DOI refers to the project across versions.
+Source-data citations and access instructions remain separate from the code citation.

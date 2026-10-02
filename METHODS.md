@@ -1,7 +1,6 @@
-# Current analysis methods
+# Analysis methods
 
-This specification describes the October 2026 joint-model presentation. The superseded
-three-pairwise-model presentation is not the current main analysis.
+The primary model uses three smoking groups; the secondary model uses prepregnancy smoking status.
 
 ## Population and outcome
 
@@ -48,7 +47,7 @@ Risks and risk differences are expressed per 1,000; risk ratios are unitless. HC
 primary and model-based covariance is a sensitivity. Uncertainty conditions on the empirical
 reference and assumes independent records; repeated pregnancies cannot be clustered by mother.
 
-## Formal interaction tests added in October
+## Interaction tests
 
 Two reduced logistic models omit only the smoking-by-age terms while retaining all main effects,
 covariates, factor levels, spline bases and complete-case records. Likelihood-ratio statistics use
@@ -57,8 +56,8 @@ Wald tests examine the same coefficient blocks. Holm adjustment covers the two g
 separately for each test method. Three exploratory primary-model contrast Wald tests form a
 separate Holm family. Log-tail probabilities are retained when ordinary probabilities underflow.
 
-These additions followed coauthor review after the main findings were available, as stated in the
-dated protocol amendments. They test conditional log-odds interaction, not directly constancy of
+These tests were developed after the initial findings, as documented in the dated method amendments.
+They test conditional log-odds interaction, not directly constancy of
 standardized RRs/RDs and not reversal by themselves.
 
 ## Crossovers and sensitivity analyses
@@ -74,12 +73,11 @@ Bonferroni intervals; their sign brackets are not continuous-root intervals. Oth
 sensitivities address age bases, covariate sets, periods, exposure definitions, dose, race/ethnicity,
 fetal-death inclusion and observed linked infant death. The populations overlap and are not
 independent replications. Mortality analyses do not eliminate live-birth selection or recover early
-losses. Withdrawn quantitative-bias scenarios are excluded from the current publication driver.
+losses.
 
 ## Reproduction boundary
 
 `run_all.R` reconstructs publication displays from aggregate results. `model-fitting/run_current.R`
 runs the statistical plan in an isolated workspace with verified prepared records. Original import
 and preprocessing code is retained, but the source-only route also needs historical reconciliation
-inputs and source dictionaries. The October extension and aggregate rebuild were executed; an
-independent end-to-end raw-download rerun is not claimed.
+inputs and source dictionaries. Standalone end-to-end raw-download reproduction has not been verified.
