@@ -4,7 +4,8 @@
 
 Code and aggregate evidence for *Reframing the smoking-preeclampsia paradox: an age-related reversal
 in 30.1 million United States birth records*. This working-tree revision matches the **1 October
-2026** manuscript package.
+2026** manuscript package, including the approved expanded Table 3. The 2 October
+repository audit changes reconstruction safeguards and documentation, not fitted estimates.
 
 ## Reconstruct the publication tables and figures
 
@@ -27,7 +28,7 @@ packaged aggregate results. It compares every table cell with the October refere
 independently checks the likelihood-ratio statistics, log-scale probabilities and Holm adjustment,
 and verifies contrast inversions, ages 15–45, and denominators. Table titles and notes are exported too.
 
-Outputs are in `output/2026-10-01/`. A nonempty output directory is never deleted or overwritten;
+Outputs are in `output/2026-10-02/`. A nonempty output directory is never deleted or overwritten;
 choose another directory for another run:
 
 ```sh
@@ -38,6 +39,11 @@ python3 tests/check_source_integrity.py
 **This is publication reconstruction, not a new fit of 30 million records.** The CI badge covers
 aggregate reconstruction and code/source checks, not raw-data reproduction or scientific validity.
 Visual approval of the manuscript figures remains an author task.
+
+Every successful run also writes its environment, Git status when available, input fingerprints,
+output checksums and a completion receipt. Within the repository, generated files can be written
+only under `output/`; source and reference directories are protected. For use from another working
+directory, supply `repository=` explicitly to `reproduce_publication()`.
 
 ## Rerun the statistical analysis
 
@@ -89,6 +95,10 @@ not the current joint primary model. No investigator imputation was used. See [M
 | `model-fitting/current/` | Frozen original-path R engines and current analysis extensions |
 | `results/` | Only the retained sensitivity aggregates used by the current tables |
 | `tests/` | Independent aggregate, source-integrity and runner checks |
+| `REPRODUCIBILITY.md` | Environment, data access, result map, audit scope and Zenodo release checklist |
+| `DATA_DICTIONARY.md` | Aggregate schemas, keys, effect scales and missing-value conventions |
+| `CONTRIBUTING.md` | Reporting errors, changing code and reviewing scientific amendments |
+| `RUN_LOG.md` | Dated commands, comparisons, actual verification and remaining limits |
 
 The public tree excludes duplicate September pipelines, old publication builders, withdrawn
 quantitative-bias outputs, unused imputation engines, manuscript drafts and local working files.
@@ -104,3 +114,4 @@ and its dependencies. No driver installs packages or downloads data automaticall
 The code has an MIT licence. NCHS source data remain governed by their source terms. `CITATION.cff`
 records software/manuscript metadata; no accepted publication, new release DOI or submission status
 is asserted by this code update. [CHANGELOG.md](CHANGELOG.md) records the October changes.
+See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) before creating a versioned Zenodo deposit.

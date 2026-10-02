@@ -1,5 +1,26 @@
 # Changes
 
+## 2026-10-02: pre-archive reproducibility audit
+
+- Applied the shared reproducible-research workflow and The Turing Way compendium principles;
+  retained the existing source/data/output separation and frozen statistical-engine paths.
+- Synchronized the approved expanded Table 3, its explanatory footnote and metadata. Its selected
+  null-age component is computed from the full-precision crossover; complete sets remain in S19.
+- Added protected output paths, explicit repository selection, working-directory restoration,
+  input-stability checks and successful-run environment/input/output receipts to the master command.
+- Added interval-boundary, confidence-component, reference-direction, overwrite and symlink tests;
+  included them in GitHub Actions. The safety scan now includes nonignored candidate release files.
+- Replaced optimization-sensitive Python assertions in integrity gates with explicit failures and
+  tested rejection of deliberately altered source inputs and unapproved release files.
+- Added a data dictionary, environment/data-access and exhibit map, contribution/correction guidance
+  and an explicit pre-Zenodo checklist. Preserved existing licenses, citation authors and version status.
+- Reviewed locally reachable history and the old bundled package archive without rewriting history.
+- Rebuilt 27 table CSVs and six vector PDFs in the working tree and a separate source export;
+  all 11 retained synthetic suites passed. RUN_LOG.md records the exact verification scope.
+
+No fitted estimates, cohorts, model formulas, reference-group definitions or numerical engines changed.
+This entry records local preparation, not a new record-level analysis or published release.
+
 ## 2026-10-01
 
 - Updated the publication entry point from three pairwise main models to the current joint primary

@@ -1,10 +1,16 @@
-"""Fail closed on private or obsolete files in the Git index; print no secret values."""
+"""Check tracked and nonignored candidate release files; print no secret values.
+
+Ignored local work/output is not a GitHub release input. The dated release audit
+reviews locally reachable history separately; this test does not certify it.
+"""
 from pathlib import Path
 import re
 import subprocess
 
 root = Path(__file__).resolve().parents[1]
-names = subprocess.check_output(['git', 'ls-files', '-z'], cwd=root).decode().split('\0')
+names = subprocess.check_output(
+    ['git', 'ls-files', '--cached', '--others', '--exclude-standard', '-z'], cwd=root
+).decode().split('\0')
 forbidden_parts = {'.claude', '.codex', '.DS_Store', '__pycache__', 'archive', '_maintainer',
                    'data', 'derived', 'cache', 'library', 'output', 'outputs', 'work'}
 forbidden_suffixes = {'.rds', '.rda', '.rdata', '.parquet', '.feather', '.docx', '.pdf',
@@ -19,16 +25,20 @@ patterns = {
     'private home path': re.compile(r'/(?:Users|home)/[A-Za-z0-9_.-]+/'),
 }
 checked = 0
-for name in filter(None, names):
+def require(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+for name in sorted(set(filter(None, names))):
     p = root/name
-    assert not set(Path(name).parts) & forbidden_parts, f'Excluded path: {name}'
-    assert not name.startswith(obsolete), f'Obsolete pipeline: {name}'
-    assert p.suffix.lower() not in forbidden_suffixes, f'Excluded file type: {name}'
-    assert p.is_file() and not p.is_symlink(), f'Non-file or symlink: {name}'
+    require(not set(Path(name).parts) & forbidden_parts, f'Excluded path: {name}')
+    require(not name.startswith(obsolete), f'Obsolete pipeline: {name}')
+    require(p.suffix.lower() not in forbidden_suffixes, f'Excluded file type: {name}')
+    require(p.is_file() and not p.is_symlink(), f'Non-file or symlink: {name}')
     data = p.read_bytes()
-    assert len(data) < 15_000_000 and b'\x00' not in data, f'Large/binary file: {name}'
+    require(len(data) < 15_000_000 and b'\x00' not in data, f'Large/binary file: {name}')
     content = data.decode('utf-8')
     for label, pattern in patterns.items():
-        assert not pattern.search(content), f'{label} candidate: {name}'
+        require(not pattern.search(content), f'{label} candidate: {name}')
     checked += 1
-print(f'PASS: {checked} indexed public files; no excluded paths, binary data, home paths or recognized secret patterns.')
+print(f'PASS: {checked} candidate public files; no excluded paths, binary data, home paths or recognized secret patterns.')

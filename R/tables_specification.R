@@ -16,8 +16,9 @@ spec_percent_ci <- function(row) {
 }
 
 # The fitted crossover of a model, and whether its simultaneous band supports both signs.
-# Roots outside ages 20 to 40 are edge artefacts of the spline, not the crossover the paper
-# reports, so they are dropped before a model is looked up.
+# This display selects the central fitted crossover in ages 20 to 40. It does not
+# restrict the fitted population or establish that every outlying root is an artefact.
+# Complete uncertainty information remains in the corresponding source aggregates.
 spec_reference_roots <- function() {
   roots <- read_result("main", "root_reference.csv")
   roots <- roots[roots$covariance == "HC0" & roots$age >= 20 & roots$age <= 40, ]

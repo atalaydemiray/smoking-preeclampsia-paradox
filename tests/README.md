@@ -5,13 +5,28 @@ Run from the repository root:
 ```sh
 python3 tests/check_source_integrity.py
 python3 tests/check_release_contents.py
+python3 tests/check_integrity_contract.py
 Rscript --vanilla tests/check_current_runner.R
+Rscript --vanilla tests/check_reconstruction_contract.R
 Rscript --vanilla run_all.R output/my_validation
 ```
 
-Use a new output directory for each reconstruction. The release-content check examines the Git
-index, so stage the intended revision before using it locally. No test downloads or reads study
+Use a new output directory for each reconstruction. The release-content check examines tracked
+and nonignored candidate files, including new uncommitted files. No test downloads or reads study
 birth records. The retained engine tests use synthetic data.
+
+`check_reconstruction_contract.R` tests protected output paths, overwrite/symlink refusal,
+inert sourcing, interval endpoints, selected-component reporting, unchanged contrast directions
+and complete confidence-set retention in S19. The master run independently checks that its inputs
+did not change during reconstruction and writes success receipts only after its checks pass.
+
+For the full retained synthetic suite, from `model-fitting/current/` run each `tests/test_*.R`
+in a fresh R process. Some require the fitting dependencies listed in REPRODUCIBILITY.md.
+This is not the 8,000-replication coverage study or record-level refitting.
+
+The 2 October audit also reviewed locally reachable Git history and the old package archive;
+the ordinary CI safety gate does not scan remote history, issues, release assets or LFS storage.
+See REPRODUCIBILITY.md and the generated run receipts for the current revision's scope.
 
 Local checks on 1 October 2026 passed:
 

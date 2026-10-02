@@ -17,6 +17,31 @@ oct_summary_rows <- function(d) do.call(rbind,lapply(seq_len(nrow(d)),function(i
   oct_ci(r$crossover_age,r$delta_lower,r$delta_upper,1),oct_set(r$full_95_fixed_null_age_set),
   oct_set(r$simultaneous_strict_negative),oct_set(r$simultaneous_strict_positive),if(isTRUE(r$simultaneous_reversal))"Yes" else "No")}))
 
+# Select the confidence-set component containing the fitted root, not simply the
+# first interval. Complete sets, including boundary uncertainty, remain in S19.
+oct_root_component <- function(confidence_set, root) {
+  if (length(confidence_set) != 1L || is.na(confidence_set) ||
+      length(root) != 1L || !is.finite(root)) {
+    stop("A finite crossover and a nonmissing null-age confidence set are required.")
+  }
+  components <- trimws(strsplit(confidence_set, " U ", fixed = TRUE)[[1]])
+  contains_root <- vapply(components, function(component) {
+    if (!substr(component, 1L, 1L) %in% c("[", "(") ||
+        !substr(component, nchar(component), nchar(component)) %in% c("]", ")")) {
+      stop("Malformed null-age interval: ", component)
+    }
+    bounds <- regmatches(component, gregexpr("-?[0-9]+(?:[.][0-9]+)?", component, perl = TRUE))[[1]]
+    if (length(bounds) != 2L) stop("Malformed null-age interval: ", component)
+    bounds <- as.numeric(bounds)
+    if (bounds[1] > bounds[2]) stop("Reversed null-age interval: ", component)
+    lower_ok <- if (startsWith(component, "[")) root >= bounds[1] else root > bounds[1]
+    upper_ok <- if (endsWith(component, "]")) root <= bounds[2] else root < bounds[2]
+    lower_ok && upper_ok
+  }, logical(1))
+  if (sum(contains_root) != 1L) stop("Expected exactly one confidence-set component containing the crossover.")
+  components[contains_root]
+}
+
 build_october_tables <- function() {
   # Unchanged sensitivity calculations are reused in a private environment.
   # No bias-scenario or imputation routine is invoked.
@@ -48,7 +73,11 @@ build_october_tables <- function() {
   out$Table_2<-oct_layout("Table_2",rbind(c("primary",rep("",5)),rrow("SS",gg("SS")$n,gg("SS")$events,main[1,],TRUE),
     rrow("SN",gg("SN")$n,gg("SN")$events,main[1,],FALSE),rrow("NN",gg("NN")$n,gg("NN")$events,main[2,],FALSE),c("secondary",rep("",5)),
     rrow("S",pretot$n[pretot$A==1],pretot$events[pretot$A==1],main[3,],TRUE),rrow("N",pretot$n[pretot$A==0],pretot$events[pretot$A==0],main[3,],FALSE)))
-  roots<-oct_summary_rows(main);out$Table_3<-oct_layout("Table_3",roots[,c(1,2,6)]);out$Table_S19<-oct_layout("Table_S19",roots)
+  roots <- oct_summary_rows(main)
+  central_sets <- vapply(seq_len(nrow(main)), function(i)
+    oct_root_component(main$full_95_fixed_null_age_set[i], main$crossover_age[i]), character(1))
+  out$Table_3 <- oct_layout("Table_3", cbind(roots[, 1:2], central_sets, roots[, 4:5]))
+  out$Table_S19 <- oct_layout("Table_S19", roots)
   for(k in c("S1","S6a","S6b","S7","S8","S9","S10"))out[[paste0("Table_",k)]]<-oct_layout(paste0("Table_",k),get(paste0("table_",tolower(k)),legacy)()[-1,,drop=FALSE])
   pops<-oct_read("interaction_tests/population_overall.csv");pops<-pops[match(c("joint","prepregnancy"),pops$population),]
   body<-lapply(seq_len(nrow(pops)),function(i){r<-pops[i,];c(r$population,oct_n(r$eligible_n),oct_n(r$complete_case_n),

@@ -1,4 +1,4 @@
-Comparison,"Crossover age, years (local 95% CI)",Opposite directions supported
-SN vs SS,,
-NN vs SS,,
-N vs S,,
+Comparison,"Crossover age, years (local 95% CI)",95% null-age confidence set around the crossover,Ages with lower risk (simultaneous 95% band),Ages with higher risk (simultaneous 95% band)
+SN vs SS,,,,
+NN vs SS,,,,
+N vs S,,,,

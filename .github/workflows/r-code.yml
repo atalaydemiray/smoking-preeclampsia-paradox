@@ -37,8 +37,14 @@ jobs:
       - name: Check public repository contents
         run: python3 tests/check_release_contents.py
 
+      - name: Test fail-closed integrity gates
+        run: python3 tests/check_integrity_contract.py
+
       - name: Test inert sourcing and isolated runner safety
         run: Rscript --vanilla tests/check_current_runner.R
+
+      - name: Test protected outputs and crossover confidence-set reporting
+        run: Rscript --vanilla tests/check_reconstruction_contract.R
 
       - name: Test crossover inference and risk reporting on synthetic data
         working-directory: model-fitting/current
@@ -49,7 +55,7 @@ jobs:
       # This checks aggregate reconstruction, not a 30-million-record rerun.
       # No record-level inputs are distributed or downloaded by CI.
       - name: Reproduce the tables and figures
-        run: Rscript run_all.R
+        run: Rscript --vanilla run_all.R
 
       - name: Keep the rebuilt output from this run
         if: always()
