@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Replaced the three integrity-check scripts with R equivalents using bundled SHA256 support;
+  removed the Python runtime requirement and updated CI and validation commands.
+- Added fail-closed synthetic fixtures for manifest paths, file sizes/types, symlinks, text encoding
+  and recognized secret patterns, alongside the retained source-tampering checks.
+- Clarified NCHS/NBER data access and the bundled development natality reader's role in imports;
+  added a research-use example covering annual codebooks, verified cache reads and provenance.
 - Reworked the README and supporting documentation for external researchers.
 - Consolidated validation and analysis-scope guidance; removed redundant handoff documents.
 - Simplified the RStudio project settings and removed unused table-writing helpers.
@@ -19,7 +25,7 @@ No scientific estimates or statistical engines changed.
   input-stability checks and successful-run environment/input/output receipts to the master command.
 - Added interval-boundary, confidence-component, reference-direction, overwrite and symlink tests;
   included them in GitHub Actions. The safety scan now includes nonignored candidate release files.
-- Replaced optimization-sensitive Python assertions in integrity gates with explicit failures and
+- Made integrity-gate failures explicit and
   tested rejection of deliberately altered source inputs and unapproved release files.
 - Added a data dictionary, environment/data-access instructions, an exhibit map and contribution guidance.
 

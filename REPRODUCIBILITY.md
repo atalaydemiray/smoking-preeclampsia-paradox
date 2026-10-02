@@ -33,7 +33,8 @@ to identify the analysis specification accompanying each reconstruction.
 ## Computational environment
 
 Public reconstruction requires R 4.6.0 and its base/recommended packages only. No additional R
-package is required. Source/safety checks require Python 3 (standard library) and Git. The GitHub
+package is required. Integrity checks also use bundled R packages, including `tools::sha256sum()`;
+the candidate-release scan additionally requires Git. No Python runtime is needed. The GitHub
 workflow pins R 4.6.0 on Ubuntu. Workflow results and run receipts identify the commit and
 environment used for a particular reconstruction.
 
@@ -71,7 +72,12 @@ from the [NCHS portal](https://www.cdc.gov/nchs/data_access/vitalstatsonline.htm
 [NBER natality catalogue](https://www.nber.org/research/data/vital-statistics-natality-birth-data).
 Main analysis years are 2016–2024; 2014–2015 supply historical sensitivity inputs. Fetal-death and
 linked birth/infant-death sources supply additional source-specific sensitivities, not recovery
-of unobserved early losses. Their historical archive/manual URLs are in `model-fitting/source_files.csv`;
+of unobserved early losses. Natality archive/manual URLs and converted-artifact hashes are recorded in
+`model-fitting/current/age45_revision/protocol/natality_package/inst/extdata/data-manifest.json`.
+The study importer reads verified local artifacts through the bundled development reader
+0.4.0.9003 with downloads disabled. That source snapshot is supplied here, so imports do not require
+a CRAN release or access to the evolving package repository. Its availability does not remove
+the preparation prerequisites below. Fetal/linked archive/manual URLs are in `model-fitting/source_files.csv`;
 linked filenames include both period and cohort years, so the filename year is not automatically
 the birth-cohort year.
 

@@ -32,13 +32,13 @@ jobs:
             cat(length(fs), "R files parsed\n")'
 
       - name: Verify imported source hashes and publication file types
-        run: python3 tests/check_source_integrity.py
+        run: Rscript --vanilla tests/check_source_integrity.R
 
       - name: Check public repository contents
-        run: python3 tests/check_release_contents.py
+        run: Rscript --vanilla tests/check_release_contents.R
 
       - name: Test fail-closed integrity gates
-        run: python3 tests/check_integrity_contract.py
+        run: Rscript --vanilla tests/check_integrity_contract.R
 
       - name: Test inert sourcing and isolated runner safety
         run: Rscript --vanilla tests/check_current_runner.R
